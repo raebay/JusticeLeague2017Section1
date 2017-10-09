@@ -3,10 +3,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		//Rae was here! :D 
-        //Zach is an awful person! :[ 
-
+//gilad 
 	}
 
 }
