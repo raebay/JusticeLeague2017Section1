@@ -1,0 +1,94 @@
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class GUI extends Application
+{
+
+	Stage window; 
+	Scene lowestPart, lowerDeck, middleDeck, upperDeck, bridge;
+	ChoiceBox<String> mapChoices = new ChoiceBox<>();
+	
+	public static void main(String[] args)
+	{
+		launch(args); 
+
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception 
+	{
+		window = primaryStage; 
+		mapChoices.getItems().addAll("Lowest Part", "Lower Deck", "Middle Deck", "Upper Deck", "Bridge"); 
+		
+		
+		//Children for Layout 1
+		Button button1 = new Button("Go to Lower Deck"); 
+		button1.setOnAction(e -> window.setScene(lowerDeck));
+		
+		//Layout 1- Lowest Part
+		StackPane layout1 = new StackPane(); 
+		layout1.setPadding(new Insets(20,20,20,20));
+		mapChoices.setValue("Lowest Part");
+		layout1.getChildren().addAll(button1, mapChoices); 
+		lowestPart = new Scene(layout1, 500,500); 
+		
+		//Children for layout 2
+		Button button2 = new Button("Go to Middle Deck");
+		button2.setOnAction(e -> window.setScene(middleDeck));
+		
+		//Layout 2- Lower Deck
+		StackPane layout2 = new StackPane();
+		layout2.setPadding(new Insets(20,20,20,20));
+		mapChoices.setValue("Lower Deck");		
+		layout2.getChildren().addAll(button2, mapChoices); 
+		lowerDeck = new Scene(layout2, 500,500); 
+		
+		//Children for layout 3
+		Button button3 = new Button("Go to Upper Deck"); 
+		button3.setOnAction(e -> window.setScene(upperDeck));
+		
+		//Layout 3- Middle Deck
+		StackPane layout3 = new StackPane(); 
+		layout3.setPadding(new Insets(20,20,20,20));
+		mapChoices.setValue("Middle Deck");
+		layout3.getChildren().addAll(button3, mapChoices); 
+		middleDeck = new Scene(layout3, 500,500); 
+		
+		//Children for layout 4
+		Button button4 = new Button("Go to Bridge"); 
+		button4.setOnAction(e -> window.setScene(bridge));
+		
+		//Layout 4- Upper Deck
+		StackPane layout4 = new StackPane(); 
+		layout4.setPadding(new Insets(20,20,20,20));
+		mapChoices.setValue("Upper Deck");
+		layout4.getChildren().addAll(button4, mapChoices); 
+		upperDeck = new Scene(layout4, 500,500); 
+		
+		//Children for layout 5
+		Button button5 = new Button("Go back to Lowest Part"); 
+		button5.setOnAction(e -> window.setScene(lowestPart));
+		
+		//Layout 5- Bridge
+		StackPane layout5 = new StackPane(); 
+		layout5.setPadding(new Insets(20,20,20,20));
+		mapChoices.setValue("Bridge");
+		layout5.getChildren().addAll(button5, mapChoices); 
+		bridge = new Scene(layout5, 500,500); 
+		
+		window.setScene(lowestPart);
+		window.setTitle("Oh Ship"); 
+		window.show(); 
+	}
+	
+	
+	
+
+}
