@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_k8rbgLdjEeeXa6PkClw5VA" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_k8rbgbdjEeeXa6PkClw5VA" bindingContexts="_k8sqRLdjEeeXa6PkClw5VA">
   <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;GUI.java&quot; tooltip=&quot;Oh Ship/src/GUI.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Oh Ship/src/GUI.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Inventory.java&quot; tooltip=&quot;Oh Ship/src/Inventory.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Oh Ship/src/Inventory.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_k8rbgbdjEeeXa6PkClw5VA" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_k8sCkLdjEeeXa6PkClw5VA" label="%trimmedwindow.label.eclipseSDK" x="836" y="39" width="1024" height="768">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -9,6 +11,9 @@
     <persistedState key="workingSets" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workingSets/>"/>
     <persistedState key="aggregateWorkingSetId" value="Aggregate for window 1508690672277"/>
     <tags>topLevel</tags>
+    <children xsi:type="basic:PartSashContainer" xmi:id="_k8sCkLdjEeeXa6PkClw5VA" selectedElement="_k8sCkbdjEeeXa6PkClw5VA" horizontal="true">
+      <children xsi:type="advanced:PerspectiveStack" xmi:id="_k8sCkbdjEeeXa6PkClw5VA" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_k8sCkrdjEeeXa6PkClw5VA">
+        <children xsi:type="advanced:Perspective" xmi:id="_k8sCkrdjEeeXa6PkClw5VA" elementId="org.eclipse.jdt.ui.JavaPerspective" selectedElement="_k8sCk7djEeeXa6PkClw5VA" label="Java" iconURI="platform:/plugin/org.eclipse.jdt.ui/$nl$/icons/full/eview16/jperspective.png">
           <persistedState key="persp.hiddenItems" value="persp.hideToolbarSC:org.eclipse.debug.ui.commands.RunToLine,persp.hideToolbarSC:org.eclipse.jdt.ui.actions.OpenProjectWizard,persp.hideToolbarSC:print,persp.hideToolbarSC:org.eclipse.ui.edit.text.toggleShowSelectedElementOnly,"/>
           <tags>persp.actionSet:org.eclipse.mylyn.doc.actionSet</tags>
           <tags>persp.actionSet:org.eclipse.mylyn.tasks.ui.navigation</tags>
