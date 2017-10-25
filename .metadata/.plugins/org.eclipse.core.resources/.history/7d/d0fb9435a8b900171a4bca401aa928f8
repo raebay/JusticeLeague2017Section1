@@ -1,0 +1,12 @@
+
+public class Testing 
+{
+
+	public static void main(String[] args) 
+	{
+		Room room = new Room(1);
+		System.out.println("Room: " + room.getrID());
+
+	}
+
+}

@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Room 
 {
@@ -8,7 +12,15 @@ public class Room
 	public Item rItems; 
 	public Monster rMonsters; 
 	public Puzzle rPuzzles;
+	
 
+    
+	public Room(String rID, String rName, String rDescription)
+	{
+		this.rID = rID; 
+		this.rName = rName; 
+		this.rDescription = rDescription; 
+	}
 	public Room(String rID, String rName, String rDescription, Item rItems, Monster rMonsters, Puzzle rPuzzles)
 	{
 		this.rID = rID;
@@ -22,11 +34,12 @@ public class Room
 	public String getrID() 
 	{
 		return rID;
+		
 	}
 
 	public void setrID(String rID) 
 	{
-		this.rID = rID;
+		this.rID = rID; 
 	}
 
 	public String getrName()
@@ -79,15 +92,17 @@ public class Room
 		this.rPuzzles = rPuzzles;
 	}
 	
-	public String printDescription()
-	{
-		return rDescription; 
-	}
-	
 	public Item searchRoom()
 	{
 		return rItems; 
 	}
+	
+	   @Override
+	   public String toString()
+	   {
+		   return "Room: Room ID=" + rID + ", Room Name=" + rName
+		         + ", Room Description=" + rDescription + "";
+	   }
 	
 	
 
