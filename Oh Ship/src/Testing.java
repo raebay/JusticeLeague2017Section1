@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,7 +13,8 @@ public class Testing
 		File roomFile = new File("roomFile.txt");
 		// open a Scanner to read data from File
 		
-		Scanner roomReader = null;   {
+		Scanner roomReader = null;  
+		{
 	   try
 		{
 	      roomReader = new Scanner(roomFile);
@@ -40,6 +42,12 @@ public class Testing
 	    }
 	    
 	    System.out.println(rooms);
+	    
+	    for(Room temp: rooms)
+	    {
+	    	
+	    }
+	       
 	    
 	}
 
