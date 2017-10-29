@@ -8,6 +8,8 @@ import java.util.Scanner;
 public class Testing extends Room
 {
 
+	 static ArrayList<Room> rooms = new ArrayList<>();
+
     
 	public static void main(String[] args) 
 	{
