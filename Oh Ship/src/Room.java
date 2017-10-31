@@ -13,6 +13,8 @@ public class Room
 	public Monster rMonsters; 
 	public Puzzle rPuzzles;
 	
+	
+	//Creating array list for room objects to be stored
 	public static ArrayList<Room> rooms = new ArrayList<>();
 	
 	File roomFile = new File("roomFile.txt");
@@ -27,14 +29,13 @@ public class Room
   } 
 	catch (FileNotFoundException e)
   {
-      // TODO Auto-generated catch block
       System.out.println("File not found - terminating program");
       System.exit(0);
   	e.printStackTrace();
   }
   
 
-   
+   //Read room into array list
     while (roomReader.hasNext())
     {
     	// read room
@@ -47,7 +48,7 @@ public class Room
     	}
     }
 
-
+	//Room constructors 
     public Room()
     {
     	
@@ -69,6 +70,7 @@ public class Room
 		this.rPuzzles = rPuzzles;
 	}
 
+	//getters and setters for room attributes
 	public String getrID() 
 	{
 		return rID;
@@ -135,6 +137,7 @@ public class Room
 		return rItems; 
 	}
 	
+		//toString method
 	   @Override
 	   public String toString()
 	   {
@@ -142,6 +145,7 @@ public class Room
 		         + ", Room Description=" + rDescription + "";
 	   }
 
+	   //Method to locate a room object by it's ID 
 	   public Room findRoom(String roomID)
 	   {	
 		   Room temp = new Room();
@@ -152,6 +156,7 @@ public class Room
 			   {
 				temp = rooms.get(rooms.indexOf(rID));
 				System.out.println(temp);
+				return temp;
 			   }
 			   else
 				   return null; 

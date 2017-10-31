@@ -1,9 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Scanner;
 
 public class Testing extends Room
 {
@@ -12,10 +7,26 @@ public class Testing extends Room
 	public static void main(String[] args) 
 	{
 
-				for(Room temp: rooms)
+		Room currentRoom = new Room();
+		
+		Iterator<Room> iterator = rooms.iterator();
+		
+			while(iterator.hasNext())
 		{
-			temp.findRoom("1.a");
+			Room temp = new Room(); 	 
+			temp = iterator.next(); 
+			
+			if(currentRoom.rID !=temp.rID)
+			{
+			currentRoom = temp.findRoom("1.a");
+			}
+			else
+			{
+			iterator.next(); 
+			}
+		
 		}
+
 	}
 
 

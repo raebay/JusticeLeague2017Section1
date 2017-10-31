@@ -1,0 +1,36 @@
+CREATE TABLE Group (
+ GroupID CHAR(10) NOT NULL,
+ Style CHAR(10)
+);
+
+ALTER TABLE Group ADD CONSTRAINT PK_Group PRIMARY KEY (GroupID);
+
+
+CREATE TABLE Musicians (
+ MusicianID INT NOT NULL,
+ GroupID CHAR(10) NOT NULL,
+ Talent CHAR(10),
+ Email CHAR(10)
+);
+
+ALTER TABLE Musicians ADD CONSTRAINT PK_Musicians PRIMARY KEY (MusicianID,GroupID);
+
+
+CREATE TABLE Music (
+ MusicCD CHAR(10) NOT NULL,
+ MusicianID INT NOT NULL,
+ GroupID CHAR(10) NOT NULL,
+ CDTitle CHAR(10),
+ songName CHAR(10)
+);
+
+ALTER TABLE Music ADD CONSTRAINT PK_Music PRIMARY KEY (MusicCD,MusicianID,GroupID);
+
+
+ALTER TABLE Musicians ADD CONSTRAINT FK_Musicians_0 FOREIGN KEY (GroupID) REFERENCES Group (GroupID);
+
+
+ALTER TABLE Music ADD CONSTRAINT FK_Music_0 FOREIGN KEY (MusicianID,GroupID) REFERENCES Musicians (MusicianID,GroupID);
+ALTER TABLE Music ADD CONSTRAINT FK_Music_1 FOREIGN KEY (GroupID) REFERENCES Group (GroupID);
+
+

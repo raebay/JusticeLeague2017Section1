@@ -1,0 +1,22 @@
+
+
+public class Testing extends Room
+{
+
+    
+	public static void main(String[] args) 
+	{
+
+		Room currentRoom = new Room(); 
+		
+			for(Room temp: rooms)
+		{
+			currentRoom = temp.findRoom("1.a");
+		}
+
+	}
+
+
+}
+	
+

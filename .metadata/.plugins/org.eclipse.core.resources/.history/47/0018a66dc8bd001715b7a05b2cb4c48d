@@ -1,0 +1,20 @@
+
+
+public class Testing extends Room
+{
+
+    
+	public static void main(String[] args) 
+	{
+
+			for(Room temp: rooms)
+		{
+			System.out.println(temp.findRoom("1.a"));
+		}
+
+	}
+
+
+}
+	
+
