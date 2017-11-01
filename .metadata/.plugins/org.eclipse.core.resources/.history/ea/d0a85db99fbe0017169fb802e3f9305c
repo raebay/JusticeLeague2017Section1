@@ -46,8 +46,7 @@ public class Testing
 	    }
 
 		Room currentRoom = new Room();
-		currentRoom = rooms.get(0);
-		
+				
 /*		for(Room temps: rooms)
 		{
 			currentRoom = temps.findRoom("1.a");
@@ -60,14 +59,14 @@ public class Testing
 			Room temp = new Room(); 	 
 			temp = iterator.next(); 
 			
-			if(currentRoom.getrID() == temp.getrID())
+			if(currentRoom.rID == temp.rID)
 			{
 				currentRoom = temp.findRoom("1.a");
 				System.out.println(currentRoom.toString()); 
 				break;
 
 			}
-			else if(currentRoom.getrID() != temp.getrID())
+			else
 			{
 				iterator.next(); 
 			}

@@ -40,14 +40,13 @@ public class Testing
 	    	String rName = roomReader.nextLine();
 	    	String description = roomReader.nextLine();
 	    	// create new Room instance and add to ArrayList
-	    	Room temps = new Room(rID, rName, description);
-	    	rooms.add(temps);
+	    	Room temp = new Room(rID, rName, description);
+	    	rooms.add(temp);
 	    	}
 	    }
 
 		Room currentRoom = new Room();
-		currentRoom = rooms.get(0);
-		
+				
 /*		for(Room temps: rooms)
 		{
 			currentRoom = temps.findRoom("1.a");
@@ -60,14 +59,12 @@ public class Testing
 			Room temp = new Room(); 	 
 			temp = iterator.next(); 
 			
-			if(currentRoom.getrID() == temp.getrID())
+			if(currentRoom.rID != temp.rID)
 			{
 				currentRoom = temp.findRoom("1.a");
-				System.out.println(currentRoom.toString()); 
-				break;
-
+				System.out.println(currentRoom.toString());
 			}
-			else if(currentRoom.getrID() != temp.getrID())
+			else
 			{
 				iterator.next(); 
 			}

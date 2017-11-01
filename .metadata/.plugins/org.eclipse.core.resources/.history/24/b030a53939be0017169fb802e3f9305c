@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Room extends Testing
+public class Room 
 {
 
 	public String rID = "";
@@ -13,6 +13,40 @@ public class Room extends Testing
 	public Monster rMonsters; 
 	public Puzzle rPuzzles;
 	
+	
+	//Creating array list for room objects to be stored
+	public static ArrayList<Room> rooms = new ArrayList<>();
+	
+	File roomFile = new File("roomFile.txt");
+	// open a Scanner to read data from File
+	
+	Scanner roomReader = null;  
+	{
+   try
+	{
+      roomReader = new Scanner(roomFile);
+	
+  } 
+	catch (FileNotFoundException e)
+  {
+      System.out.println("File not found - terminating program");
+      System.exit(0);
+  	e.printStackTrace();
+  }
+  
+
+   //Read room into array list
+    while (roomReader.hasNext())
+    {
+    	// read room
+    	String rID = roomReader.nextLine();
+    	String rName = roomReader.nextLine();
+    	String description = roomReader.nextLine();
+    	// create new Room instance and add to ArrayList
+    	Room temp = new Room();
+    	rooms.add(temp);
+    	}
+    }
 
 	//Room constructors 
     public Room()

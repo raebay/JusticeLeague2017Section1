@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Room extends Testing
+public class Room 
 {
 
 	public String rID = "";
@@ -12,6 +12,9 @@ public class Room extends Testing
 	public Item rItems; 
 	public Monster rMonsters; 
 	public Puzzle rPuzzles;
+	
+	public static ArrayList<Room> rooms = new ArrayList<>();
+
 	
 
 	//Room constructors 
