@@ -4,6 +4,11 @@ public class Monster extends Character
 	public String name = "";
 	public String descripton = "";
 	public boolean isDefeated = false; 
+	 
+	public Monster()
+	{
+		
+	}
 
 	public Monster(int health, String name, String description, boolean isDefeated) 
 	{

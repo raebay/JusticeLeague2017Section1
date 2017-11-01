@@ -2,17 +2,62 @@
 public class Puzzle 
 {
 	public boolean isSoloved = false; 
-	public String puzzleHint = "";
-	public String puzzleDescription = "";
+	public String pHint = "";
+	public String pDescription = "";
+	public String pName = " "; 
 
-	public Puzzle(boolean isSolved, String puzzleHint, String puzzleDescription) 
+	public Puzzle()
 	{
+		
+	}
+	
+	public Puzzle(String pName, String pDescription, String pHint)
+	{
+		this.pName = pName; 
+		this.pDescription = pDescription; 
+		this.pHint = pHint; 
+		
+	}
+	public Puzzle(String pName, boolean isSolved, String pHint, String pDescription) 
+	{
+		this.pName = pName; 
 		this.isSoloved = isSolved; 
-		this.puzzleDescription = puzzleDescription; 
-		this.puzzleHint = puzzleHint; 
+		this.pDescription = pDescription; 
+		this.pHint = pHint; 
+	}
+	
+	
+	public String getpHint() 
+	{
+		return pHint;
 	}
 
-	public boolean isSoloved() 
+	public void setpHint(String pHint) 
+	{
+		this.pHint = pHint;
+	}
+
+	public String getpDescription()
+	{
+		return pDescription;
+	}
+
+	public void setpDescription(String pDescription) 
+	{
+		this.pDescription = pDescription;
+	}
+
+	public String getpName()
+	{
+		return pName;
+	}
+
+	public void setpName(String pName) 
+	{
+		this.pName = pName;
+	}
+
+	public boolean getIsSoloved() 
 	{
 		return isSoloved;
 	}
@@ -22,44 +67,22 @@ public class Puzzle
 		this.isSoloved = isSoloved;
 	}
 
-	public String getPuzzleHint() 
-	{
-		return puzzleHint;
-	}
-
-	public void setPuzzleHint(String puzzleHint) 
-	{
-		this.puzzleHint = puzzleHint;
-	}
-
-	public String getPuzzleDescription() 
-	{
-		return puzzleDescription;
-	}
-
-	public void setPuzzleDescription(String puzzleDescription) 
-	{
-		this.puzzleDescription = puzzleDescription;
-	}
 	
 	public void checkAnswer()
 	{
 		
 	}
 	
-	public void examine()
-	{
-		
-	}
-	
-	public String obtainHint()
-	{
-		return puzzleHint; 
-	}
-	
 	public void ignorePuzzle()
 	{
 		
 	}
+	
+	//toString method
+	   @Override
+	   public String toString()
+	   {
+		   return "Puzzle: " + pName + ", Description=" + pDescription;
+	   }
 
 }

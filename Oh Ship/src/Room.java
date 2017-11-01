@@ -20,11 +20,12 @@ public class Room extends Testing
     	
     }
     
-	public Room(String rID, String rName, String rDescription)
+	public Room(String rID, String rName, String rDescription, String rItems, String rMonsters, String rPuzzles)
 	{
 		this.rID = rID; 
 		this.rName = rName; 
-		this.rDescription = rDescription; 
+		this.rDescription = rDescription;  
+		
 	}
 	public Room(String rID, String rName, String rDescription, Item rItems, Monster rMonsters, Puzzle rPuzzles)
 	{
@@ -67,7 +68,8 @@ public class Room extends Testing
 	{
 		this.rDescription = rDescription;
 	}
-
+	
+	//Searches Room for items 
 	public Item getrItems() 
 	{
 		return rItems;
@@ -90,17 +92,12 @@ public class Room extends Testing
 
 	public Puzzle getrPuzzles() 
 	{
-		return rPuzzles;
+		return Testing.puzzles.get(puzzles.indexOf(rPuzzles)); 
 	}
 
 	public void setrPuzzles(Puzzle rPuzzles) 
 	{
-		this.rPuzzles = rPuzzles;
-	}
-	
-	public Item searchRoom()
-	{
-		return rItems; 
+		 Testing.puzzles.add(rPuzzles); 
 	}
 	
 		//toString method
@@ -109,27 +106,6 @@ public class Room extends Testing
 	   {
 		   return "Room: Room ID=" + rID + ", Room Name=" + rName
 		         + ", Room Description=" + rDescription + "";
-	   }
-
-	   //Method to locate a room object by it's ID 
-	   public Room findRoom(String roomID)
-	   {	
-		   Room temp = new Room();
-		   
-		   for (Room obj: rooms)
-		   {
-			   if(obj.rID.equals(roomID))
-			   {
-				temp = rooms.get(rooms.indexOf(rID));
-				System.out.println(temp);
-				return temp;
-			   }
-			   else
-				   return null; 
-	
-		   }
-		return temp; 
-	
 	   }
 	
 
