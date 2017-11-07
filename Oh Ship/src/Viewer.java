@@ -1,8 +1,10 @@
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-//import javafx.geometry.Pos;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -10,19 +12,36 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-//import javafx.scene.text.Text;
 import javafx.scene.layout.BorderPane;
-//import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 
-public class Viewer extends Application {
-
+public class Viewer extends Application implements EventHandler<ActionEvent> {
+	
+	
+	TextField output;
+	TextField input;
+	Button btnExamine;
+	Button btnSubmit;
+	Button btnOptions;
+	ComboBox<String> mapList;
+	ObservableList<String> maps;
+	ImageView imgView;
+	Image imgLowest;
+	Image imgLower;
+	Image imgMiddle;
+	Image imgUpper;
+	Image imgBridge;
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		initUI(primaryStage);
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
 	}
 	
 	private void initUI(Stage stage) {
@@ -37,45 +56,43 @@ public class Viewer extends Application {
 		right.setPadding(new Insets(10,15,10,15));
 		right.setSpacing(10);
 		right.setPrefSize(windowSizeX/3, windowSizeY);
-		TextField output = new TextField();
+		// output field
+		output = new TextField();
+		output.setAlignment(Pos.TOP_LEFT);
+		output.setEditable(false);
 		output.setPrefHeight((3*windowSizeY)/4);
-		TextField input = new TextField();
+		// input field
+		input = new TextField();
+		input.setAlignment(Pos.TOP_LEFT);
 		input.setPrefHeight(windowSizeY/4);
+		// add input and output to VBOX
 		right.getChildren().add(output);
 		right.getChildren().add(input);
 		
 		
-		//map components
+		// map components
 		Pane mapView = new Pane();
-		Image imgLowest = new Image("LowestPart.png");
-		ImageView viewLowest = new ImageView();
-		viewLowest.setImage(imgLowest);
-		viewLowest.setFitWidth(400);
-		viewLowest.setPreserveRatio(true);
-		mapView.getChildren().add(viewLowest);
-		
-		
-		
-		
-		// lowest part gridpane
-//		GridPane left = new GridPane();
-//		left.setStyle(" -fx-background-color: #ffffff;");
-//		left.setPadding(new Insets(10,15,10,15));
-//		left.setGridLinesVisible(true);
-//		left.setPrefSize((2*windowSizeX)/3, windowSizeY/6);
-//		left.setAlignment(Pos.valueOf("CENTER"));
-		
-
-		
-		
+		// initialize map images
+		imgLowest = new Image("/Lowest.png");
+		imgLower = new Image("/Lower.png");
+		imgMiddle = new Image("/Middle.png");
+		imgUpper = new Image("/Upper.png");
+		imgBridge = new Image("/Bridge.png");
+		// image view that displays selected map image
+		imgView = new ImageView();
+		imgView.setFitWidth(400);
+		imgView.setPreserveRatio(true);
+		mapView.getChildren().add(imgView);
 		// combo box list of maps
-		ObservableList<String> maps = 
+		maps = 
 			    FXCollections.observableArrayList(
 			        "Lowest Part",
 			        "Lower Deck",
 			        "Middle Deck",
-			        "Upper Deck"
+			        "Upper Deck",
+			        "Bridge"
 			    );
+		
 		
 		//button bar 
 		HBox bottom = new HBox();
@@ -83,12 +100,19 @@ public class Viewer extends Application {
 		bottom.setPadding(new Insets(10, 15, 10, 15));
 		bottom.setSpacing(10);
 		bottom.setStyle(" -fx-background-color: #ADADAD;");
-		Button btnExamine = new Button("Examine");
-		Button btnSubmit = new Button("Submit");
-		Button btnOptions = new Button("Options");
-		ComboBox<String> mapList = new ComboBox<String>(maps);
-		
-		
+		// examine button
+		btnExamine = new Button("Examine");
+		btnExamine.setOnAction(this);
+		// submit button
+		btnSubmit = new Button("Submit");
+		btnSubmit.setOnAction(this);
+		// options button
+		btnOptions = new Button("Options");
+		btnOptions.setOnAction(this);
+		// combobox for map list
+		mapList = new ComboBox<String>(maps);
+		mapList.setOnAction(this);
+		// add buttons and list to HBOX
 		bottom.getChildren().add(mapList);
 		bottom.getChildren().add(btnOptions);
 		bottom.getChildren().add(btnExamine);
@@ -109,11 +133,47 @@ public class Viewer extends Application {
 		stage.setScene(scene);
 		stage.setResizable(false);
 		stage.show();
+		
+	}
+
+	@Override
+	public void handle(ActionEvent event) {
+		
+		// examine button event
+		if(event.getSource() == btnExamine) {
+			System.out.println("Examine");
+		}
+		
+		// submit button event
+		if(event.getSource() == btnSubmit) {
+			output.setText(input.getText());
+			input.setText("");
+		}
+		
+		// options button event
+		if(event.getSource() == btnOptions) {
+			System.out.println("Options");
+		}
+		
+		// combo box event
+		if(event.getSource() == mapList) {
+			if(mapList.getValue() == "Lowest Part") {
+				imgView.setImage(imgLowest);
+			} else if(mapList.getValue() == "Lower Deck") {
+				imgView.setImage(imgLower);
+			} else if(mapList.getValue() == "Middle Deck") {
+				imgView.setImage(imgMiddle);
+			} else if(mapList.getValue() == "Upper Deck") {
+				imgView.setImage(imgUpper);
+			} else if(mapList.getValue() == "Bridge") {
+				imgView.setImage(imgBridge);
+			}
+		}
+		
+		
 	}
 	
-	public static void main(String[] args) {
-		launch(args);
-	}
+	
 	
 	
 	
