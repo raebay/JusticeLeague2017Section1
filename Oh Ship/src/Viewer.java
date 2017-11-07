@@ -2,15 +2,19 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -21,13 +25,14 @@ import javafx.stage.Stage;
 public class Viewer extends Application implements EventHandler<ActionEvent> {
 	
 	
-	TextField output;
+	TextArea output;
 	TextField input;
 	Button btnExamine;
 	Button btnSubmit;
 	Button btnOptions;
 	ComboBox<String> mapList;
 	ObservableList<String> maps;
+	
 	ImageView imgView;
 	Image imgLowest;
 	Image imgLower;
@@ -57,8 +62,10 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		right.setSpacing(10);
 		right.setPrefSize(windowSizeX/3, windowSizeY);
 		// output field
-		output = new TextField();
-		output.setAlignment(Pos.TOP_LEFT);
+		output = new TextArea();
+		output.setWrapText(true);
+		output.setStyle("-fx-font-size: 0.8em;");
+		output.setText("Holy smokes, this GUI is pretty poopy.");
 		output.setEditable(false);
 		output.setPrefHeight((3*windowSizeY)/4);
 		// input field
@@ -146,14 +153,14 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		
 		// submit button event
 		if(event.getSource() == btnSubmit) {
-			output.setText(input.getText());
-			input.setText("");
+			updateConsole();
 		}
 		
 		// options button event
 		if(event.getSource() == btnOptions) {
 			System.out.println("Options");
 		}
+		
 		
 		// combo box event
 		if(event.getSource() == mapList) {
@@ -171,6 +178,17 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		}
 		
 		
+	}
+
+	
+	public void updateConsole() {
+		String console = output.getText();
+		if (console != null) {
+			console = console + "\r\n";
+		}
+		String usrInput = "user: " + input.getText();
+		output.setText(console + usrInput);
+		input.setText("");
 	}
 	
 	
