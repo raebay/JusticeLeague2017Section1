@@ -100,8 +100,7 @@ public class Testing
 	    	temps.setrMonsters(rMonsters);
 	    	
 	    	//adding Puzzle objects
-	    	Puzzle rPuzzles = new Puzzle(); 
-	    	rPuzzles.setpName(puzzles);
+	    	Puzzle rPuzzles = temps.findPuzzle(puzzles);
 	    	temps.setrPuzzles(rPuzzles);
 	    	
 	    	//adding whole temps object to rooms arrayList
@@ -117,11 +116,16 @@ public class Testing
 
 		Room currentRoom = new Room();
 		currentRoom = findRoom("1.a");
-		System.out.println(currentRoom.getrPuzzles());
 		
-		// returns null
-		currentRoom = findRoom("cantFindMe");
+		for(Puzzle puzzle: puzzles)
+		{
+			System.out.println(puzzle.toString());
+		}
 		
+		System.out.println(currentRoom.getrPuzzles()); 
+		
+		System.out.println(currentRoom.getrPuzzles().getpHint());
+				
 
 
 
@@ -141,8 +145,23 @@ public class Testing
 		return null;
 
 	}
+	
+	//Method for finding puzzles in a certian room. Used in the rooms array list. 
+	//Probably will need a similar method for finding the monsters and items in a room 
+	//when the monsters and items array lists are made
+	public static Puzzle findPuzzle(String puzzleName)
+	{
+		for (Puzzle obj: puzzles)
+		{
+			if(obj.getpName().equals(puzzleName))
+			{
+				return obj;
+			}
+		}
+		return null;
 
-
+	}
+	
 }
 	
 

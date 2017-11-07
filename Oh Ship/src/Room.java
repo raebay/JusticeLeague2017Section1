@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Scanner;
 
 public class Room extends Testing
@@ -92,12 +93,17 @@ public class Room extends Testing
 
 	public Puzzle getrPuzzles() 
 	{
-		return Testing.puzzles.get(puzzles.indexOf(rPuzzles)); 
+		if(rPuzzles == null)
+		{
+			return null;
+		}
+		else
+		return rPuzzles; 
 	}
 
 	public void setrPuzzles(Puzzle rPuzzles) 
 	{
-		 Testing.puzzles.add(rPuzzles); 
+		this.rPuzzles = rPuzzles; 
 	}
 	
 		//toString method

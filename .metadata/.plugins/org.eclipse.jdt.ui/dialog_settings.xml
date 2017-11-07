@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="C:\Users\Rae\Documents\School\Systems Analysis and Design\In Class" key="org.eclipse.jdt.ui.last.external.project"/>
+	<item value="C:\Users\Rae\Documents" key="org.eclipse.jdt.ui.last.external.project"/>
 	<section name="ProblemSeveritiesConfigurationBlock">
 		<item value="false" key="expanded2"/>
 		<item value="false" key="expanded1"/>
@@ -72,7 +72,7 @@
 	<section name="quick_assist_proposal_size">
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item value="2" key="pageIndex"/>
+		<item value="3" key="pageIndex"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>
