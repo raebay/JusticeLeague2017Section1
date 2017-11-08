@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class Testing 
 {
 
+	//Hello Gilad, can you see me?!
+	
+	
 	//Creating array list for room objects to be stored
 	public static ArrayList<Room> rooms = new ArrayList<>();
 	
