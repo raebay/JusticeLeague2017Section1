@@ -47,6 +47,7 @@ public class Testing
 	    	String pName = puzzleReader.nextLine();
 	    	String pDescription = puzzleReader.nextLine();
 	    	String pHint = puzzleReader.nextLine();
+	    	String pRooms = puzzleReader.nextLine();
 	    	
 	    	// create new Puzzle instance
 	    	Puzzle temps = new Puzzle(pName, pDescription, pHint);
@@ -114,8 +115,9 @@ public class Testing
 		
 		//This is literally just testing all the shit I've written so far.
 		//The puzzles read into the puzzle arrayList and print accordingly, as do the rooms. 
-		//Can't quite get the puzzle object in the rooms arrayList to correspond to 
-		//the puzzle object from the puzzles arrayList 
+		//You can find which puzzles are in which rooms by searching by the get puzzles method in the room
+		//going to have to change that to a get room method in the puzzle though
+		//because each puzzle can be in more than one room 
 
 		Room currentRoom = new Room();
 		currentRoom = findRoom("1.a");

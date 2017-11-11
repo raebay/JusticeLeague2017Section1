@@ -11,9 +11,7 @@ public class Room extends Testing
 	public String rName = "";
 	public String rDescription = "";
 	public Item rItems; 
-	public Monster rMonsters; 
-	public Puzzle rPuzzles;
-	
+	public Monster rMonsters; 	
 
 	//Room constructors 
     public Room()
@@ -21,21 +19,20 @@ public class Room extends Testing
     	
     }
     
-	public Room(String rID, String rName, String rDescription, String rItems, String rMonsters, String rPuzzles)
+	public Room(String rID, String rName, String rDescription, String rItems, String rMonsters)
 	{
 		this.rID = rID; 
 		this.rName = rName; 
 		this.rDescription = rDescription;  
 		
 	}
-	public Room(String rID, String rName, String rDescription, Item rItems, Monster rMonsters, Puzzle rPuzzles)
+	public Room(String rID, String rName, String rDescription, Item rItems, Monster rMonsters)
 	{
 		this.rID = rID;
 		this.rName = rName;
 		this.rDescription = rDescription;
 		this.rItems = rItems;
 		this.rMonsters = rMonsters;
-		this.rPuzzles = rPuzzles;
 	}
 
 	//getters and setters for room attributes
@@ -91,20 +88,6 @@ public class Room extends Testing
 		this.rMonsters = rMonsters;
 	}
 
-	public Puzzle getrPuzzles() 
-	{
-		if(rPuzzles == null)
-		{
-			return null;
-		}
-		else
-		return rPuzzles; 
-	}
-
-	public void setrPuzzles(Puzzle rPuzzles) 
-	{
-		this.rPuzzles = rPuzzles; 
-	}
 	
 		//toString method
 	   @Override

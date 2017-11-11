@@ -5,6 +5,7 @@ public class Puzzle
 	public String pHint = "";
 	public String pDescription = "";
 	public String pName = " "; 
+	public Room pRooms; 
 
 	public Puzzle()
 	{
@@ -16,14 +17,16 @@ public class Puzzle
 		this.pName = pName; 
 		this.pDescription = pDescription; 
 		this.pHint = pHint; 
+		this.pRooms = pRooms; 
 		
 	}
-	public Puzzle(String pName, boolean isSolved, String pHint, String pDescription) 
+	public Puzzle(String pName, boolean isSolved, String pHint, String pDescription, Room pRooms) 
 	{
 		this.pName = pName; 
 		this.isSoloved = isSolved; 
 		this.pDescription = pDescription; 
 		this.pHint = pHint; 
+		this.pRooms = pRooms; 
 	}
 	
 	
@@ -76,6 +79,16 @@ public class Puzzle
 	public void ignorePuzzle()
 	{
 		
+	}
+	
+	public Room getpRooms()
+	{
+		return pRooms; 
+	}
+	
+	public void setpRooms(Room pRooms)
+	{
+		this.pRooms = pRooms; 
 	}
 	
 	//toString method
