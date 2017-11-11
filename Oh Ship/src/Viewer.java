@@ -162,9 +162,9 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		// >>>>>>>>>>>>
 		if(event.getSource() == btnSubmit) {
 			// calls update in the model class
-			test.update(input.getText());
+			String out = test.update(input.getText());
 			// calls update in the view class
-			updateConsole();
+			updateConsole(out);
 		}
 		
 		// options button event
@@ -192,8 +192,8 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 	}
 
 	
-	public void updateConsole() {
-		output.setText(test.getOutput());
+	public void updateConsole(String out) {
+		output.setText(out);
 		
 //		String console = output.getText();
 //		if (console != null) {
