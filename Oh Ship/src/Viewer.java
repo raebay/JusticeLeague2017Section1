@@ -33,6 +33,10 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 	ComboBox<String> mapList;
 	ObservableList<String> maps;
 	
+	// put any models as field variables, this is the iffy part
+	TestModel test;
+	
+	
 	ImageView imgView;
 	Image imgLowest;
 	Image imgLower;
@@ -42,6 +46,8 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		// Initialize any models you need to use <<<<
+		test = new TestModel();
 		initUI(primaryStage);
 	}
 	
@@ -103,7 +109,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		
 		//button bar 
 		HBox bottom = new HBox();
-		bottom.setPrefSize((2*windowSizeX)/3, windowSizeY/6);
+		bottom.setPrefSize((2*windowSizeX)/3, windowSizeY/8);
 		bottom.setPadding(new Insets(10, 15, 10, 15));
 		bottom.setSpacing(10);
 		bottom.setStyle(" -fx-background-color: #ADADAD;");
@@ -116,7 +122,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		// options button
 		btnOptions = new Button("Options");
 		btnOptions.setOnAction(this);
-		// combobox for map list
+		// combo box for map list
 		mapList = new ComboBox<String>(maps);
 		mapList.setOnAction(this);
 		// add buttons and list to HBOX
@@ -152,7 +158,12 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		}
 		
 		// submit button event
+		// this is the part that communicates with the testmodel class
+		// >>>>>>>>>>>>
 		if(event.getSource() == btnSubmit) {
+			// calls update in the model class
+			test.update(input.getText());
+			// calls update in the view class
 			updateConsole();
 		}
 		
@@ -182,13 +193,15 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 
 	
 	public void updateConsole() {
-		String console = output.getText();
-		if (console != null) {
-			console = console + "\r\n";
-		}
-		String usrInput = "user: " + input.getText();
-		output.setText(console + usrInput);
-		input.setText("");
+		output.setText(test.getOutput());
+		
+//		String console = output.getText();
+//		if (console != null) {
+//			console = console + "\r\n";
+//		}
+//		String usrInput = "user: " + input.getText();
+//		output.setText(console + usrInput);
+//		input.setText("");
 	}
 	
 	
