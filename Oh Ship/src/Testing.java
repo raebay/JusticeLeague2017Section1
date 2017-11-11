@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import Model.Item;
+
 public class Testing 
 {
 
@@ -95,7 +97,7 @@ public class Testing
 	    	
 	    	//adding Item objects
 	    	Item rItems = new Item();
-	    	rItems.setName(items);
+	    	rItems.setiName(items);
 	    	temps.setrItems(rItems);
 	    	
 	    	//adding Monster objects
@@ -167,6 +169,7 @@ public class Testing
 
 	}
 	
+
 }
 	
 
