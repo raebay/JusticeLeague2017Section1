@@ -12,12 +12,11 @@ public class Puzzle
 		
 	}
 	
-	public Puzzle(String pName, String pDescription, String pHint)
+	public Puzzle(String pName, String pDescription, String pHint, String pRooms)
 	{
 		this.pName = pName; 
 		this.pDescription = pDescription; 
 		this.pHint = pHint; 
-		this.pRooms = pRooms; 
 		
 	}
 	public Puzzle(String pName, boolean isSolved, String pHint, String pDescription, Room pRooms) 

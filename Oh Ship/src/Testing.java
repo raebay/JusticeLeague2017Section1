@@ -21,44 +21,7 @@ public class Testing
 
 	public static void main(String[] args) 
 	{
-		/**
-		 * This part is to read in the puzzle file and save each puzzle object in an ArrayList
-		 */
-		File puzzleFile = new File("puzzleFile.txt");
-		// open a Scanner to read data from File
 		
-		Scanner puzzleReader = null;  
-		{
-	   try
-		{
-	      puzzleReader = new Scanner(puzzleFile);
-		
-	  } 
-		catch (FileNotFoundException e)
-	  {
-	      System.out.println("File not found - terminating program");
-	      System.exit(0);
-	  	e.printStackTrace();
-	  }
-	  
-
-	   //Read puzzle into array list
-	    while (puzzleReader.hasNext())
-	    {
-	    	// read puzzle
-	    	String pName = puzzleReader.nextLine();
-	    	String pDescription = puzzleReader.nextLine();
-	    	String pHint = puzzleReader.nextLine();
-	    	String pRooms = puzzleReader.nextLine();
-	    	
-	    	// create new Puzzle instance
-	    	Puzzle temps = new Puzzle(pName, pDescription, pHint);
-	    	
-	    	//adding whole temps object to puzzles arrayList
-	    	puzzles.add(temps);	    	
-	    	}
-
-	    
 		/**
 		 * This part is to read in the room file and save each room object in an arrayList 
 		 */
@@ -93,7 +56,7 @@ public class Testing
 	    	String puzzles = roomReader.nextLine(); 
 	    	
 	    	// create new Room instance
-	    	Room temps = new Room(rID, rName, description, items, monsters, puzzles);
+	    	Room temps = new Room(rID, rName, description, items, monsters);
 	    	
 	    	//adding Item objects
 	    	Item rItems = new Item();
@@ -107,19 +70,61 @@ public class Testing
 	    	
 	    	//adding Puzzle objects
 	    	Puzzle rPuzzles = temps.findPuzzle(puzzles);
-	    	temps.setrPuzzles(rPuzzles);
+	//    	temps.setrPuzzles(rPuzzles);
 	    	
 	    	//adding whole temps object to rooms arrayList
 	    	rooms.add(temps);	    	
 	    	}
+	    
+		/**
+		 * This part is to read in the puzzle file and save each puzzle object in an ArrayList
+		 */
+		File puzzleFile = new File("puzzleFile.txt");
+		// open a Scanner to read data from File
+		
+		Scanner puzzleReader = null;  
+		{
+	   try
+		{
+	      puzzleReader = new Scanner(puzzleFile);
+		
+	  } 
+		catch (FileNotFoundException e)
+	  {
+	      System.out.println("File not found - terminating program");
+	      System.exit(0);
+	  	e.printStackTrace();
+	  }
+	  
+
+	   //Read puzzle into array list
+	    while (puzzleReader.hasNext())
+	    {
+	    	// read puzzle
+	    	String pName = puzzleReader.nextLine();
+	    	String pDescription = puzzleReader.nextLine();
+	    	String pHint = puzzleReader.nextLine();
+	    	String pRooms = puzzleReader.nextLine(); 
+	    	
+	    	// create new Puzzle instance
+	    	Puzzle temps = new Puzzle(pName, pDescription, pHint, pRooms); 
+	    	
+	    	Room pRoom = Testing.findRoom(pRooms);
+	    	temps.setpRooms(pRoom);
+	    	
+	    	//adding whole temps object to puzzles arrayList
+	    	puzzles.add(temps);	    	
+	    	}
+
+	    
+	
 	    }
 }
 		
 		//This is literally just testing all the shit I've written so far.
 		//The puzzles read into the puzzle arrayList and print accordingly, as do the rooms. 
-		//You can find which puzzles are in which rooms by searching by the get puzzles method in the room
-		//going to have to change that to a get room method in the puzzle though
-		//because each puzzle can be in more than one room 
+		//Can't quite get the puzzle object in the rooms arrayList to correspond to 
+		//the puzzle object from the puzzles arrayList 
 
 		Room currentRoom = new Room();
 		currentRoom = findRoom("1.a");
@@ -129,11 +134,7 @@ public class Testing
 			System.out.println(puzzle.toString());
 		}
 		
-		System.out.println(currentRoom.getrPuzzles()); 
 		
-		System.out.println(currentRoom.getrPuzzles().getpHint());
-				
-
 
 
 	}
@@ -169,7 +170,4 @@ public class Testing
 
 	}
 	
-
 }
-	
-
