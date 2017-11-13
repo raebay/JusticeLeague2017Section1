@@ -161,10 +161,12 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		// this is the part that communicates with the testmodel class
 		// >>>>>>>>>>>>
 		if(event.getSource() == btnSubmit) {
+			
 			// calls update in the model class
 			String out = test.update(input.getText());
 			// calls update in the view class
 			updateConsole(out);
+			input.setText("");
 		}
 		
 		// options button event
