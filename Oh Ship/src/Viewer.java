@@ -124,6 +124,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		btnOptions.setOnAction(this);
 		// combo box for map list
 		mapList = new ComboBox<String>(maps);
+		mapList.setPromptText("Select map");
 		mapList.setOnAction(this);
 		// add buttons and list to HBOX
 		bottom.getChildren().add(mapList);
