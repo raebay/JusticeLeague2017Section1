@@ -51,12 +51,12 @@ public class Testing
 	    	String rID = roomReader.nextLine();
 	    	String rName = roomReader.nextLine();
 	    	String description = roomReader.nextLine();
+	    	String doors = roomReader.nextLine(); 
 	    	String items = roomReader.nextLine(); 
 	    	String monsters = roomReader.nextLine(); 
-	    	String puzzles = roomReader.nextLine(); 
 	    	
 	    	// create new Room instance
-	    	Room temps = new Room(rID, rName, description, items, monsters);
+	    	Room temps = new Room(rID, rName, description, doors, items, monsters);
 	    	
 	    	//adding Item objects
 	    	Item rItems = new Item();
@@ -67,10 +67,6 @@ public class Testing
 	    	Monster rMonsters = new Monster();
 	    	rMonsters.setName(monsters);
 	    	temps.setrMonsters(rMonsters);
-	    	
-	    	//adding Puzzle objects
-	    	Puzzle rPuzzles = temps.findPuzzle(puzzles);
-	//    	temps.setrPuzzles(rPuzzles);
 	    	
 	    	//adding whole temps object to rooms arrayList
 	    	rooms.add(temps);	    	
@@ -105,12 +101,18 @@ public class Testing
 	    	String pDescription = puzzleReader.nextLine();
 	    	String pHint = puzzleReader.nextLine();
 	    	String pRooms = puzzleReader.nextLine(); 
+	    	String pHintR = puzzleReader.nextLine(); 
 	    	
 	    	// create new Puzzle instance
-	    	Puzzle temps = new Puzzle(pName, pDescription, pHint, pRooms); 
+	    	Puzzle temps = new Puzzle(pName, pDescription, pHint, pRooms, pHintR); 
 	    	
+	    	//Adding room objects to the puzzles 
 	    	Room pRoom = Testing.findRoom(pRooms);
 	    	temps.setpRooms(pRoom);
+	    	
+	    	//Adding room hint to puzzles 
+	    	Room pHintRoom = Testing.findRoom(pHintR);
+	    	temps.setpHintRoom(pHintRoom);
 	    	
 	    	//adding whole temps object to puzzles arrayList
 	    	puzzles.add(temps);	    	

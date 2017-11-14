@@ -13,7 +13,8 @@ public class Room extends Testing
 	public String rName = "";
 	public String rDescription = "";
 	public Item rItems; 
-	public Monster rMonsters; 	
+	public Monster rMonsters; 
+	public String doors = "";
 
 	//Room constructors 
     public Room()
@@ -21,18 +22,20 @@ public class Room extends Testing
     	
     }
     
-	public Room(String rID, String rName, String rDescription, String rItems, String rMonsters)
+	public Room(String rID, String rName, String rDescription, String doors, String rItems, String rMonsters)
 	{
 		this.rID = rID; 
 		this.rName = rName; 
 		this.rDescription = rDescription;  
+		this.doors = doors; 
 		
 	}
-	public Room(String rID, String rName, String rDescription, Item rItems, Monster rMonsters)
+	public Room(String rID, String rName, String rDescription, String doors, Item rItems, Monster rMonsters)
 	{
 		this.rID = rID;
 		this.rName = rName;
 		this.rDescription = rDescription;
+		this.doors = doors; 
 		this.rItems = rItems;
 		this.rMonsters = rMonsters;
 	}
@@ -64,12 +67,21 @@ public class Room extends Testing
 		return rDescription;
 	}
 
+	public void setDoors(String doors) 
+	{
+		this.doors = doors;
+	}
+	
+	public String getDoors() 
+	{
+		return doors;
+	}
+
 	public void setrDescription(String rDescription) 
 	{
 		this.rDescription = rDescription;
 	}
 	
-	//Searches Room for items 
 	public Item getrItems() 
 	{
 		return rItems;

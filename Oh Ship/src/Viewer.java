@@ -151,42 +151,57 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 	}
 
 	@Override
-	public void handle(ActionEvent event) {
+	public void handle(ActionEvent event) 
+	{
 		
 		// examine button event
-		if(event.getSource() == btnExamine) {
+		if(event.getSource() == btnExamine) 
+		{
 			System.out.println("Examine");
 		}
 		
 		// submit button event
 		// this is the part that communicates with the testmodel class
 		// >>>>>>>>>>>>
-		if(event.getSource() == btnSubmit) {
+		if(event.getSource() == btnSubmit)
+		{
 			
 			// calls update in the model class
 			String out = test.update(input.getText());
 			// calls update in the view class
 			updateConsole(out);
 			input.setText("");
+
 		}
 		
 		// options button event
-		if(event.getSource() == btnOptions) {
+		if(event.getSource() == btnOptions)
+		{
 			System.out.println("Options");
 		}
 		
 		
 		// combo box event
-		if(event.getSource() == mapList) {
-			if(mapList.getValue() == "Lowest Part") {
+		if(event.getSource() == mapList) 
+		{
+			if(mapList.getValue() == "Lowest Part") 
+			{
 				imgView.setImage(imgLowest);
-			} else if(mapList.getValue() == "Lower Deck") {
+			} 
+			else if(mapList.getValue() == "Lower Deck") 
+			{
 				imgView.setImage(imgLower);
-			} else if(mapList.getValue() == "Middle Deck") {
+			} 
+			else if(mapList.getValue() == "Middle Deck") 
+			{
 				imgView.setImage(imgMiddle);
-			} else if(mapList.getValue() == "Upper Deck") {
+			} 
+			else if(mapList.getValue() == "Upper Deck") 
+			{
 				imgView.setImage(imgUpper);
-			} else if(mapList.getValue() == "Bridge") {
+			} 
+			else if(mapList.getValue() == "Bridge") 
+			{
 				imgView.setImage(imgBridge);
 			}
 		}
@@ -195,9 +210,9 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 	}
 
 	
-	public void updateConsole(String out) {
+	public void updateConsole(String out) 
+	{
 		output.setText(out);
-		
 //		String console = output.getText();
 //		if (console != null) {
 //			console = console + "\r\n";

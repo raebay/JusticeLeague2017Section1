@@ -6,26 +6,29 @@ public class Puzzle
 	public String pDescription = "";
 	public String pName = " "; 
 	public Room pRooms; 
+	public Room pHintRoom; 
 
 	public Puzzle()
 	{
 		
 	}
 	
-	public Puzzle(String pName, String pDescription, String pHint, String pRooms)
+	public Puzzle(String pName, String pDescription, String pHint, String pRooms, String pHintRoom)
 	{
 		this.pName = pName; 
 		this.pDescription = pDescription; 
 		this.pHint = pHint; 
 		
 	}
-	public Puzzle(String pName, boolean isSolved, String pHint, String pDescription, Room pRooms) 
+	public Puzzle(String pName, boolean isSolved, String pHint, String pDescription, Room pRooms, Room pHintRoom) 
 	{
 		this.pName = pName; 
 		this.isSoloved = isSolved; 
 		this.pDescription = pDescription; 
 		this.pHint = pHint; 
-		this.pRooms = pRooms; 
+		this.pRooms = pRooms;
+		this.pHintRoom = pHintRoom; 
+
 	}
 	
 	
@@ -88,6 +91,16 @@ public class Puzzle
 	public void setpRooms(Room pRooms)
 	{
 		this.pRooms = pRooms; 
+	}
+	
+	public Room getpHintRoom()
+	{
+		return pHintRoom; 
+	}
+	
+	public void setpHintRoom(Room pHintRoom)
+	{
+		this.pHintRoom = pHintRoom; 
 	}
 	
 	//toString method
