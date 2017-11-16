@@ -104,6 +104,7 @@ public class TestModel {
 			currentRoom = findRoom(roomID); 
 			//output = output + "\r\n" + in;
 			output = currentRoom.getrName() + "\r\n" + currentRoom.getrDescription();
+			
 		}
 		
 		return output;

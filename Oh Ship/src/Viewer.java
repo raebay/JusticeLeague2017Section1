@@ -43,6 +43,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 	Image imgMiddle;
 	Image imgUpper;
 	Image imgBridge;
+	Image img1HLower;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -86,11 +87,13 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		// map components
 		Pane mapView = new Pane();
 		// initialize map images
-		imgLowest = new Image("/Lowest.png");
-		imgLower = new Image("/Lower.png");
-		imgMiddle = new Image("/Middle.png");
-		imgUpper = new Image("/Upper.png");
-		imgBridge = new Image("/Bridge.png");
+		imgLowest = new Image("/resources/Lowest.png");
+		imgLower = new Image("/resources/Lower.png");
+		imgMiddle = new Image("/resources/Middle.png");
+		imgUpper = new Image("/resources/Upper.png");
+		imgBridge = new Image("/resources/Bridge.png");
+		img1HLower = new Image("/resources/1H_Staircase1_Lower.png");
+		
 		// image view that displays selected map image
 		imgView = new ImageView();
 		imgView.setFitWidth(400);
