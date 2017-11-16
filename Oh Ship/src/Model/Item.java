@@ -1,46 +1,41 @@
 package Model;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Scanner;
 
 public class Item 
 {
 
-	public int iId;
+	public String iId;
 	public String iName; 
 	public String iDescription; 
 	public ArrayList<EquippableItem> equippableitemInventory;
 	
 	
+	public Item(String iID, String iName, String iDescription)
+	{
+		this.iId = iID;
+		this.iName = iName;
+		this.iDescription = iDescription; 		
+		
+	}
+	
 	public Item()
 	{
-	this.iId = 0;	
-	this.iName = "";
-	this.iDescription = "";
-	}
-	
-	public Item(int iId, String iName, String iDescription)
-	{
-		this.iId = iId;
-		this.iName = iName;
-		this.iDescription = iDescription; 
-		
-		
-		
+		/*this.iId = "";	
+		this.iName = "";
+		this.iDescription = "";*/
 	}
 
-	
 	//getters and setters for items
-	public int getiId()
+	public String getiId()
 	{
 		return iId;
 	}
-	public void setiId(int iId)
+	
+	public void setiId(String iId)
 	{
 		this.iId = iId;
 	}
+	
 	public String getiName()
 	{
 		return iName;
@@ -61,6 +56,7 @@ public class Item
 	{
 		this.iDescription = iDescription;
 	}
+	
 	public ArrayList<EquippableItem> getInventory()
 	{
 		return equippableitemInventory;

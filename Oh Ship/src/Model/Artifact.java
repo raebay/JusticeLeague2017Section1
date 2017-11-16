@@ -1,31 +1,32 @@
 package Model;
 
 import View.Console;
-public class Artifact extends Item{
+public class Artifact extends Item
+{
 
 	public Console View;
 	
-	public int artifactId;
+	public String artifactId;
 	
 	public Artifact()
 	{
-		super(0, "", "");
-		this.artifactId = 0;
+		super("", "", "");
+		this.artifactId = "";
 	}
 	
 	
-	public Artifact(int iId, String iName, String iDescription, int artifactId)
+	public Artifact(String iId, String iName, String iDescription, String artifactId)
 	{
 		super(iId, iName, iDescription);
 		this.artifactId= artifactId;
 	}
 	
-	public int getArtifactId()
+	public String getArtifactId()
 	{
 		return artifactId;
 	}
 	
-	public void setArtifactid(int artifactId)
+	public void setArtifactid(String artifactId)
 	{
 		this.artifactId = artifactId;
 	}

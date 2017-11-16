@@ -6,29 +6,29 @@ public class ConsumableItem extends Item
 {
 	Console view;
 	
-	public int consumableItemId;
+	public String consumableItemId;
 
 	public ConsumableItem()
 	{
-		super(0, "", "");
-		this.consumableItemId = 0;
+		super("", "", "");
+		this.consumableItemId =  "";
 	}
 	
 	
-	public ConsumableItem(int iId, String iName, String iDescription, int consumableItemId)
+	public ConsumableItem(String iId, String iName, String iDescription, String consumableItemId)
 	{
 		super(iId, iName, iDescription);
 		this.consumableItemId = consumableItemId;
 	}
 	
-	public int getConsumableItemId()
+	public String getConsumableItemId()
 	{
 		return consumableItemId;
 	}
 	
 	
 	
-	public void setConsumableItemId(int consumableItemId)
+	public void setConsumableItemId(String consumableItemID)
 	{
 		this.consumableItemId = consumableItemId;
 	}

@@ -5,16 +5,16 @@ import View.Console;
 public class EquippableItem extends Item 
 {
 	public Console view;
-	int equippableItemId;
+	String equippableItemId;
 	int statChange; 
 	
 	public EquippableItem() {
 		super();
-		this.equippableItemId = 0;
+		this.equippableItemId = "";
 		this.statChange = 0;
 	}
 	
-	public EquippableItem(int iId, String iName, String iDescription, int equippableItemId, int statChange)
+	public EquippableItem(String iId, String iName, String iDescription, String equippableItemId, int statChange)
 	{
 		super(iId, iName, iDescription);
 		this.equippableItemId = equippableItemId;
