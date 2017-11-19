@@ -10,6 +10,10 @@ public class TestModel {
 	//private String input;
 	private String output;
 	
+	// this is a temp var that I need to access the current room ID. This is true speghetti code, I'm sorry. -Zach
+	public String currentRoomID;
+	
+	
 	//Creating array list for room and item objects to be stored
 	public static ArrayList<Room> rooms = new ArrayList<>();
 	public static ArrayList<Item> items = new ArrayList<>(); 
@@ -143,6 +147,9 @@ public class TestModel {
 			//output = output + "\r\n" + in;
 			output = currentRoom.getrName() + "\r\n" + currentRoom.getrDescription();
 			
+			//set the current room ID
+			currentRoomID = currentRoom.getrID();
+			System.out.println(currentRoomID);
 		}
 		if(input.contains("Search") || input.contains("search"))
 		{

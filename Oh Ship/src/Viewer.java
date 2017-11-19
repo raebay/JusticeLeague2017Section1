@@ -44,6 +44,10 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 	Image imgUpper;
 	Image imgBridge;
 	Image img1HLower;
+	Image img1a;
+	Image img1b;
+	Image img1c;
+	Image img1d;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -93,6 +97,12 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		imgUpper = new Image("/resources/Upper.png");
 		imgBridge = new Image("/resources/Bridge.png");
 		img1HLower = new Image("/resources/1H_Staircase1_Lower.png");
+		img1a = new Image("/resources/1A_EngineRoom.png");
+		img1b = new Image("/resources/1B_Hall.png");
+		img1c = new Image("/resources/1C_EngineRoomB.png");
+		img1d = new Image("/resources/1D_LockerRooms.png");
+
+
 		
 		// image view that displays selected map image
 		imgView = new ImageView();
@@ -174,7 +184,10 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 			// calls update in the view class
 			updateConsole(out);
 			input.setText("");
-
+			
+			//call method to update map view if player location has changed
+			updateMapView();
+			
 		}
 		
 		// options button event
@@ -212,6 +225,18 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		
 	}
 
+	public void updateMapView() {
+		// finds the room the player currently is and displays the corresponding map.
+		if (test.currentRoomID.equals("1.a")) {
+			imgView.setImage(img1a);
+		} else if (test.currentRoomID.equals("1.b")) {
+			imgView.setImage(img1b);
+		} else if (test.currentRoomID.equals("1.c")) {
+			imgView.setImage(img1c);
+		} else if (test.currentRoomID.equals("1.d")) {
+			imgView.setImage(img1d);
+		}
+	}
 	
 	public void updateConsole(String out) 
 	{
