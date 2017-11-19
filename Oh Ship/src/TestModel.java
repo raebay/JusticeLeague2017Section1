@@ -142,17 +142,20 @@ public class TestModel {
 			currentRoom = findRoom(roomID); 
 			//output = output + "\r\n" + in;
 			output = currentRoom.getrName() + "\r\n" + currentRoom.getrDescription();
-			
 		}
-		if(input.contains("Search") || input.contains("search"))
+		
+		else if(input.contains("Search") || input.contains("search"))
 		{
+			currentRoom.getrItems();
+			
+			if(currentRoom.getrItems().equals(null))
+			{
+				output = "Sorry, nothing here";
+			}
+			else
 			output = "You look around the room, and you find some good shit!" + "\r\n" + currentRoom.getrItems();
 		}
 		
-		for(Item obj: items)
-		{
-			System.out.println(obj);
-		}
 		
 		return output;
 
