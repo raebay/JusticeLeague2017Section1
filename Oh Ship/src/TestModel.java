@@ -19,6 +19,46 @@ public class TestModel {
 	public static ArrayList<Item> items = new ArrayList<>(); 
 
 	/**
+	 * This part is to read in the items file and save each item object in an arrayList 
+	 */
+	
+	File itemFile = new File("itemFile");
+	// open a Scanner to read data from File
+	
+	Scanner itemReader = null;  
+	{
+   try
+	{
+      itemReader = new Scanner(itemFile);
+	
+  } 
+	catch (FileNotFoundException e)
+  {
+      System.out.println("File not found - terminating program");
+      System.exit(0);
+  	e.printStackTrace();
+  }
+  
+
+   //Read item into array list
+    while (itemReader.hasNext())
+    {
+    	// read item
+    	String iID = itemReader.nextLine();
+    	String iName = itemReader.nextLine();
+    	String iDescription = itemReader.nextLine();
+    	
+    	// create new Item instance
+    	Item temp = new Item(iID, iName, iDescription); 
+    	
+    	//adding whole temp object to items arrayList
+    	items.add(temp);	    	
+    	}
+
+	}
+	
+	
+	/**
 	 * This part is to read in the room file and save each room object in an arrayList 
 	 */
 	
@@ -69,44 +109,7 @@ public class TestModel {
 
 	}
 	
-	/**
-	 * This part is to read in the items file and save each room object in an arrayList 
-	 */
-	
-	File itemFile = new File("itemFile");
-	// open a Scanner to read data from File
-	
-	Scanner itemReader = null;  
-	{
-   try
-	{
-      itemReader = new Scanner(itemFile);
-	
-  } 
-	catch (FileNotFoundException e)
-  {
-      System.out.println("File not found - terminating program");
-      System.exit(0);
-  	e.printStackTrace();
-  }
-  
 
-   //Read item into array list
-    while (itemReader.hasNext())
-    {
-    	// read item
-    	String iID = itemReader.nextLine();
-    	String iName = itemReader.nextLine();
-    	String iDescription = itemReader.nextLine();
-    	
-    	// create new Item instance
-    	Item temp = new Item(iID, iName, iDescription); 
-    	
-    	//adding whole temp object to items arrayList
-    	items.add(temp);	    	
-    	}
-
-	}
 	
 	//Current Room!// 
 	Room currentRoom = new Room(); 
@@ -146,25 +149,23 @@ public class TestModel {
 			currentRoom = findRoom(roomID); 
 			//output = output + "\r\n" + in;
 			output = currentRoom.getrName() + "\r\n" + currentRoom.getrDescription();
-<<<<<<< HEAD
-=======
+
 			
 			//set the current room ID
 			currentRoomID = currentRoom.getrID();
 			System.out.println(currentRoomID);
->>>>>>> 1b77a22251f01bcaf2dbeb9adda401017816267e
 		}
 		
-		else if(input.contains("Search") || input.contains("search"))
+		if(input.contains("Search") || input.contains("search"))
 		{
 			currentRoom.getrItems();
 			
-			if(currentRoom.getrItems().equals(null))
+			if(currentRoom.getrItems() == null)
 			{
-				output = "Sorry, nothing here";
+				output = "Yep. That's a room.";
 			}
 			else
-			output = "You look around the room, and you find some good shit!" + "\r\n" + currentRoom.getrItems();
+			output = "You look around the room, and " + currentRoom.getrItems();
 		}
 		
 		
@@ -193,8 +194,11 @@ public class TestModel {
 		{
 			if(obj.iId.equals(itemID))
 			{
-				System.out.println(obj);
 				return obj;
+			}
+			else
+			{
+				return null;
 			}
 		}
 		return null;

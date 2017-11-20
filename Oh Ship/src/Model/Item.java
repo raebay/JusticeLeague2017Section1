@@ -85,7 +85,7 @@ public class Item
 	   @Override
 	   public String toString()
 	   {
-		   return "Item: Item ID =" + iId + ", Item Name=" + iName + ", Item Description=" + iDescription;
+		   return "a wild " + iName + " has appeared!"; 
 	   }
 
 	
