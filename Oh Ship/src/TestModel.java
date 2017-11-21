@@ -162,7 +162,7 @@ public class TestModel {
 			
 			if(currentRoom.getrItems() == null)
 			{
-				output = "Yep. That's a room.";
+				output = "You look around but find nothing you can use.";
 			}
 			else
 			output = "You look around the room, and " + currentRoom.getrItems();
