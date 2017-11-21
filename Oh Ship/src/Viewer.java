@@ -208,22 +208,26 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		// >>>>>>>>>>>>
 		if(event.getSource() == btnSubmit)
 		{
-			
+			String in = input.getText();
 			// calls update in the model class
-			String out = test.update(input.getText());
+			String out = test.update(in);
 			// calls update in the view class
 			updateConsole(out);
 			input.setText("");
 			
 			//call method to update map view if player location has changed
-			updateMapView();
+			if (in.contains("Go to")) {
+				updateMapView();
+			}
 			
 		}
 		
 		// options button event
 		if(event.getSource() == btnOptions)
 		{
-			System.out.println("Options");
+			String out = test.update("options");
+			updateConsole(out);
+			input.setText("");
 		}
 		
 		
