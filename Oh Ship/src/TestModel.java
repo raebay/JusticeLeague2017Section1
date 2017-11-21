@@ -114,6 +114,9 @@ public class TestModel {
 	//Current Room!// 
 	Room currentRoom = new Room(); 
 	
+	//Inventory//
+	Inventory inventory = new Inventory(); 
+	
 	public TestModel() {
 		//input = "";
 		output = "";
@@ -124,11 +127,13 @@ public class TestModel {
 //		//this.input = input;
 //	}
 	
-	public void setOutput(String output) {
+	public void setOutput(String output)
+	{
 		this.output = output;
 	}
 	
-	public String getOutput() {
+	public String getOutput()
+	{
 		return output;
 	}
 	
@@ -168,6 +173,18 @@ public class TestModel {
 			output = "You look around the room, and " + currentRoom.getrItems();
 		}
 		
+		if(input.contains("Pick up") || input.contains("pick up"))
+		{
+			String itemName = input.substring(input.indexOf("p", 4) + 2, input.length()); 
+	    	Item item = TestModel.findNameItem(itemName);
+			inventory.pickUp(item);  
+			output = item.getiName() + " was added to your inventory!"; 
+		}
+		
+		if(input.equalsIgnoreCase("check inventory"))
+		{
+			System.out.println(inventory);
+		}
 		
 		return output;
 
@@ -187,12 +204,30 @@ public class TestModel {
 
 	}
 	
-	//Method finds a item object based on its roomID 
+	//Method finds a item object based on its item id
 	public static Item findItem(String itemID)
 	{
 		for (Item obj: items)
 		{
 			if(obj.iId.equals(itemID))
+			{
+				return obj;
+			}
+			else
+			{
+				return null;
+			}
+		}
+		return null;
+
+	}
+	
+	//Method finds a item object based on its item name 
+	public static Item findNameItem(String itemName)
+	{
+		for (Item obj: items)
+		{
+			if(obj.iName.equals(itemName))
 			{
 				return obj;
 			}
