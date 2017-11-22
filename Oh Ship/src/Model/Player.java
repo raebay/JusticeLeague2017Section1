@@ -1,4 +1,4 @@
-
+package Model;
 public class Player extends Character 
 {
 	Inventory pInventory; 
@@ -6,7 +6,7 @@ public class Player extends Character
 
 	public Player(int health, Inventory pInventory, Room pLocation) 
 	{
-		super(health);
+		super(health, health, health, health);
 		this.pInventory = pInventory; 
 		this.pLocation = pLocation; 
 

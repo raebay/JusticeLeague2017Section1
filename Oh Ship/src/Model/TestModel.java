@@ -1,9 +1,10 @@
+package Model;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Model.Item;
+import Model.*;
 
 public class TestModel {
 
@@ -99,8 +100,8 @@ public class TestModel {
     	temps.setrItems(rItems);
 
     	//adding Monster objects
-    	Monster rMonsters = new Monster();
-    	rMonsters.setName(monsters);
+    	Monster rMonsters = new Monster(ID, monsterName, monsterDescription, monsterSurrender, character);
+    	rMonsters.setMonsterName(monsters);
     	temps.setrMonsters(rMonsters);
     	
     	//adding whole temps object to rooms arrayList
@@ -110,6 +111,7 @@ public class TestModel {
 	}
 	
 
+	
 	
 	//Current Room!// 
 	Room currentRoom = new Room(); 

@@ -1,3 +1,4 @@
+package Model;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import Model.Item;
 public class Testing 
 {
 
-	//Hello Gilad, can you see me?!
+	
 	
 	
 	//Creating array list for room objects to be stored
@@ -65,7 +66,7 @@ public class Testing
 	    	
 	    	//adding Monster objects
 	    	Monster rMonsters = new Monster();
-	    	rMonsters.setName(monsters);
+	    	rMonsters.setMonsterName(monsters);
 	    	temps.setrMonsters(rMonsters);
 	    	
 	    	//adding whole temps object to rooms arrayList

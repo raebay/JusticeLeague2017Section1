@@ -1,4 +1,4 @@
-
+package Model;
 public class Puzzle 
 {
 	public boolean isSoloved = false; 
