@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import Model.*;
 
+
 public class TestModel {
 
 	//private String input;
@@ -100,8 +101,8 @@ public class TestModel {
     	temps.setrItems(rItems);
 
     	//adding Monster objects
-    	Monster rMonsters = new Monster(ID, monsterName, monsterDescription, monsterSurrender, character);
-    	rMonsters.setMonsterName(monsters);
+    	Monster rMonsters = new Monster(monsters, monsters, monsters, monsters, null);
+    	rMonsters.setName(monsters);
     	temps.setrMonsters(rMonsters);
     	
     	//adding whole temps object to rooms arrayList

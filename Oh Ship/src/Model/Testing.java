@@ -65,8 +65,8 @@ public class Testing
 	    	temps.setrItems(rItems);
 	    	
 	    	//adding Monster objects
-	    	Monster rMonsters = new Monster();
-	    	rMonsters.setMonsterName(monsters);
+	    	Monster rMonsters = new Monster(monsters, monsters, monsters, monsters, null);
+	    	rMonsters.setName(monsters);
 	    	temps.setrMonsters(rMonsters);
 	    	
 	    	//adding whole temps object to rooms arrayList

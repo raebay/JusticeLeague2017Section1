@@ -3,60 +3,80 @@ import java.util.Set;
 
 
 
-import java.util.HashSet;
+
 public class Monster //extends Character 
 {
-private CharacterSt st;
-String ID;
-String name;
-String description;
-String surrender;
+public String mId = "";
+public String mName = "";
+public String mDescription = "";
+public String mSurrender = "";
+	
+private Character character;
+//String ID;
+//String name;
+//String description;
+//String surrender;
 
-public Monster(String ID, String name, String description, String surrender, CharacterSt st)
+
+public Monster()
 {
-	setID(ID);
-	setName(name);
-	setDescription(description);
-	setSurrender(surrender);
-	setSt(st);
+	
+}
+
+public Monster(String mId, String mName, String mDescription, String mSurrender)
+{
+	this.mId = mId;
+	this.mName = mName;
+	this.mDescription = mDescription;
+	this.mSurrender = mSurrender;
+	
 }
 	
-public CharacterSt getSt() {
-	return st;
+
+public Monster(String mId, String mName, String mDescription, String mSurrender, Character character)
+{
+	this.mId = mId;
+	this.mName = mName;
+	this.mDescription = mDescription;
+	this.mSurrender = mSurrender;
+	this.character = character;
+}
+public Character getCharacter() {
+	return character;
 }
 
-public void setSt(CharacterSt st) {
-	this.st = st;
+public void setCharacter(Character character) {
+	this.character = character;
 }
 
-public String getID() {
-	return ID;
+public String getMid() {
+	return mId;
 }
 
-public void setID(String ID) {
-	this.ID = ID;
+public void setMid(String mId) {
+	this.mId = mId;
 }
-public String getName() {
-	return name;
-}
-
-public void setName(String name) {
-	this.name = name;
-}
-public String getDescription() {
-	return description;
+public String getMName() {
+	return mName;
 }
 
-public void setDescription(String description) {
-	this.description = description;
+public void setMName(String mName) {
+	this.mName = mName;
+}
+public String getMDescription() {
+	return mDescription;
 }
 
-public String getSurrender() {
-	return surrender;
+public void setMDescription(String mDescription) {
+	this.mDescription = mDescription;
 }
 
-public void setSurrender(String surrender) {
-	this.surrender = surrender;
+public String getMSurrender() {
+	return mSurrender;
+}
+
+public void setMSurrender(String mSurrender) {
+	this.mSurrender = mSurrender;
 }
 	
 	
