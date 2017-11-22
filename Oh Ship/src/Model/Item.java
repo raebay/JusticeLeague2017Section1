@@ -67,11 +67,6 @@ public class Item
 		this.equippableitemInventory = equippableitem;
 	}
 	
-	//public String examine()
-	{
-		//return iDescription; 
-	}
-	
 	public void drop()
 	{
 		
@@ -81,6 +76,7 @@ public class Item
 	{
 		equippableitemInventory.add(equippableitem);
 	}
+	
 	//toString method
 	   @Override
 	   public String toString()

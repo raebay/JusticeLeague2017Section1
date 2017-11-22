@@ -28,7 +28,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 	
 	TextArea output;
 	TextField input;
-	Button btnExamine;
+	Button btnHelp;
 	Button btnSubmit;
 	Button btnOptions;
 	ComboBox<String> mapList;
@@ -49,6 +49,20 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 	Image img1b;
 	Image img1c;
 	Image img1d;
+	Image img1e;
+	Image img1f;
+	Image img1g;
+	Image img1h;
+	Image img2a;
+	Image img2b;
+	Image img2c;
+	Image img2d;
+	Image img2e;
+	Image img2f;
+	Image img2g;
+	Image img2h;
+	Image img2i;
+	Image img2j;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -77,7 +91,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		output = new TextArea();
 		output.setWrapText(true);
 		output.setStyle("-fx-font-size: 0.8em;");
-		output.setText("Holy smokes, this GUI is pretty poopy.");
+		output.setText("Oh Ship, press options to save, press help to get list of commands");
 		output.setEditable(false);
 		output.setPrefHeight((3*windowSizeY)/4);
 		// input field
@@ -102,6 +116,20 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		img1b = new Image("/resources/1B_Hall.png");
 		img1c = new Image("/resources/1C_EngineRoomB.png");
 		img1d = new Image("/resources/1D_LockerRooms.png");
+		img1e = new Image("/resources/1E_Hall2.png");
+		img1f = new Image("/resources/1F_SupervisorsOffice.png");
+		img1g = new Image("/resources/1G_UtilityCloset.png");
+		img2a = new Image("/resources/2A_AccessRoom.png");
+		img2b = new Image("/resources/2B_OpenRoom.png");
+		img2c = new Image("/resources/2C_Hallway.png");
+		img2d = new Image("/resources/2D_CrewQuarters.png");
+		img2e = new Image("/resources/2E_OfficersQuarters.png");
+		img2f = new Image("/resources/2F_MainLobby.png");
+		img2g = new Image("/resources/2G_Hallway2.png");
+		img2h = new Image("/resources/2H_DiningHall.png");
+		img2i = new Image("/resources/2I_CargoArea.png");
+		img2j = new Image("/resources/2J_Kitchen.png");
+		
 
 
 		
@@ -128,8 +156,8 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		bottom.setSpacing(10);
 		bottom.setStyle(" -fx-background-color: #ADADAD;");
 		// examine button
-		btnExamine = new Button("Examine");
-		btnExamine.setOnAction(this);
+		btnHelp = new Button("Help");
+		btnHelp.setOnAction(this);
 		// submit button
 		btnSubmit = new Button("Submit");
 		btnSubmit.setOnAction(this);
@@ -143,7 +171,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		// add buttons and list to HBOX
 		bottom.getChildren().add(mapList);
 		bottom.getChildren().add(btnOptions);
-		bottom.getChildren().add(btnExamine);
+		bottom.getChildren().add(btnHelp);
 		bottom.getChildren().add(btnSubmit);
 		
 		
@@ -169,9 +197,11 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 	{
 		
 		// examine button event
-		if(event.getSource() == btnExamine) 
+		if(event.getSource() == btnHelp) 
 		{
-			System.out.println("Examine");
+			output.setText("- Commands List -"
+					+ "\r\nGo to [RoomID]"
+					+ "\r\nSearch");
 		}
 		
 		// submit button event
@@ -179,22 +209,26 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		// >>>>>>>>>>>>
 		if(event.getSource() == btnSubmit)
 		{
-			
+			String in = input.getText();
 			// calls update in the model class
-			String out = test.update(input.getText());
+			String out = test.update(in);
 			// calls update in the view class
 			updateConsole(out);
 			input.setText("");
 			
 			//call method to update map view if player location has changed
-			updateMapView();
+			if (in.contains("Go to")) {
+				updateMapView();
+			}
 			
 		}
 		
 		// options button event
 		if(event.getSource() == btnOptions)
 		{
-			System.out.println("Options");
+			String out = test.update("options");
+			updateConsole(out);
+			input.setText("");
 		}
 		
 		
@@ -236,19 +270,38 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 			imgView.setImage(img1c);
 		} else if (test.currentRoomID.equals("1.d")) {
 			imgView.setImage(img1d);
-		}
+		} else if (test.currentRoomID.equals("1.e")) {
+			imgView.setImage(img1e);
+		} else if (test.currentRoomID.equals("1.f")) {
+			imgView.setImage(img1f);
+		} else if (test.currentRoomID.equals("1.g")) {
+			imgView.setImage(img1g);
+		} else if (test.currentRoomID.equals("2.a")) {
+			imgView.setImage(img2a);
+		} else if (test.currentRoomID.equals("2.b")) {
+			imgView.setImage(img2b);
+		} else if (test.currentRoomID.equals("2.c")) {
+			imgView.setImage(img2c);
+		} else if (test.currentRoomID.equals("2.d")) {
+			imgView.setImage(img2d);
+		} else if (test.currentRoomID.equals("2.e")) {
+			imgView.setImage(img2e);
+		} else if (test.currentRoomID.equals("2.f")) {
+			imgView.setImage(img2f);
+		} else if (test.currentRoomID.equals("2.g")) {
+			imgView.setImage(img2g);
+		} else if (test.currentRoomID.equals("2.h")) {
+			imgView.setImage(img2h);
+		} else if (test.currentRoomID.equals("2.i")) {
+			imgView.setImage(img2i);
+		} else if (test.currentRoomID.equals("2.j")) {
+			imgView.setImage(img2j);
+		} 
 	}
 	
 	public void updateConsole(String out) 
 	{
 		output.setText(out);
-//		String console = output.getText();
-//		if (console != null) {
-//			console = console + "\r\n";
-//		}
-//		String usrInput = "user: " + input.getText();
-//		output.setText(console + usrInput);
-//		input.setText("");
 	}
 	
 	
