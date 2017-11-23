@@ -63,11 +63,11 @@ public class Testing
 	    	Item rItems = new Item();
 	    	rItems.setiName(items);
 	    	temps.setrItems(rItems);
-	    	
+/*	    	
 	    	//adding Monster objects
 	    	Monster rMonsters = new Monster(monsters, monsters, monsters, monsters, null);
-	    	rMonsters.setName(monsters);
-	    	temps.setrMonsters(rMonsters);
+	    	rMonsters.setMName(monsters);
+	    	temps.setrMonsters(rMonsters);*/
 	    	
 	    	//adding whole temps object to rooms arrayList
 	    	rooms.add(temps);	    	

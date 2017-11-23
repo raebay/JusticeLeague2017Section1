@@ -1,6 +1,6 @@
 package Model;
 
-public abstract class Character 
+public class Character 
 {
 private int cHP;
 private int cAttack;

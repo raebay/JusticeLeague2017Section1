@@ -102,7 +102,7 @@ public class TestModel {
 
     	//adding Monster objects
     	Monster rMonsters = new Monster(monsters, monsters, monsters, monsters, null);
-    	rMonsters.setName(monsters);
+    	rMonsters.setMName(monsters);
     	temps.setrMonsters(rMonsters);
     	
     	//adding whole temps object to rooms arrayList
@@ -196,7 +196,7 @@ public class TestModel {
 			output = "You look around the room, and " + currentRoom.getrItems();
 		}
 		
-		if(input.contains("Pick up") || input.contains("pick up"))
+		if(input.contains("pick up") || input.contains("Pick up"))
 		{
 			String itemName = input.substring(input.indexOf("p", 4) + 2, input.length()); 
 	    	Item item = TestModel.findNameItem(itemName);
@@ -206,7 +206,8 @@ public class TestModel {
 		
 		if(input.equalsIgnoreCase("check inventory"))
 		{
-			System.out.println(inventory);
+				 output = inventory.toString();
+				
 		}
 		
 		return output;
@@ -232,14 +233,11 @@ public class TestModel {
 	{
 		for (Item obj: items)
 		{
-			if(obj.iId.equals(itemID))
+			if(obj.iId.equalsIgnoreCase(itemID))
 			{
 				return obj;
 			}
-			else
-			{
-				return null;
-			}
+
 		}
 		return null;
 
@@ -250,14 +248,11 @@ public class TestModel {
 	{
 		for (Item obj: items)
 		{
-			if(obj.iName.equals(itemName))
+			if(obj.iName.equalsIgnoreCase(itemName))
 			{
 				return obj;
-			}
-			else
-			{
-				return null;
-			}
+			}			
+
 		}
 		return null;
 

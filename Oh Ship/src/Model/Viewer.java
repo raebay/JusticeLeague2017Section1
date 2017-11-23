@@ -23,7 +23,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 
-public class Viewer extends Application implements EventHandler<ActionEvent> {
+public class Viewer extends Application implements EventHandler<ActionEvent> 
+{
 	
 	
 	TextArea output;
@@ -65,17 +66,20 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 	Image img2j;
 	
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage primaryStage) throws Exception
+	{
 		// Initialize any models you need to use <<<<
 		test = new TestModel();
 		initUI(primaryStage);
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		launch(args);
 	}
 	
-	private void initUI(Stage stage) {
+	private void initUI(Stage stage)
+	{
 		//initial window pane and setting variables
 		int windowSizeX = 600;
 		int windowSizeY = 400;
@@ -260,7 +264,8 @@ public class Viewer extends Application implements EventHandler<ActionEvent> {
 		
 	}
 
-	public void updateMapView() {
+	public void updateMapView() 
+	{
 		// finds the room the player currently is and displays the corresponding map.
 		if (test.currentRoomID.equals("1.a")) {
 			imgView.setImage(img1a);

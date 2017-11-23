@@ -53,7 +53,7 @@ public class MonsterMenu{
 		
 		description = "A pirate is running down the stairs towards you.";
 		surrender = "You are defeated";
-		monsterList.add(new Monster(IDs[5], name[5], description, surrender, new CharacterSt(8,6,10,3)));
+		monsterList.add(new Monster(IDs[5], name[5], description, surrender, new Character(8,6,10,3)));
 		
 		description = "This pirate has a cutlass on his side, and looks like a younger pirate that can't fully grow a beard yet.";
 		surrender = "You announce your presence while\n" + 
