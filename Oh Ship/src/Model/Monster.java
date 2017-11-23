@@ -11,7 +11,7 @@ public String mName = "";
 public String mDescription = "";
 public String mWeapon = "";
 public String mSurrender = "";
-	
+public boolean isDefeated = false;	
 private Character character;
 //String ID;
 //String name;
@@ -34,7 +34,7 @@ public Monster(String mId, String mName, String mDescription, String mWeapon, St
 }
 	
 
-public Monster(String mId, String mName, String mDescription, String mWeapon, String mSurrender ,Character character)
+public Monster(String mId, String mName, String mDescription, String mWeapon, String mSurrender ,Character character, boolean isDefeated)
 {
 	this.mId = mId;
 	this.mName = mName;
@@ -42,6 +42,8 @@ public Monster(String mId, String mName, String mDescription, String mWeapon, St
 	this.mWeapon = mWeapon;
 	this.mSurrender = mSurrender;
 	this.character = character;
+	this.isDefeated = isDefeated;
+	
 }
 public Character getCharacter() {
 	return character;
@@ -87,7 +89,17 @@ public String getMSurrender() {
 public void setMSurrender(String mSurrender) {
 	this.mSurrender = mSurrender;
 }
-	
+
+public boolean isDefeated()
+{
+	return isDefeated;
+}
+
+public void setDefeated(boolean isDefeated) 
+{
+	this.isDefeated = isDefeated;
+}
+
 @Override
 public String toString()
 {

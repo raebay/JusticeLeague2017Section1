@@ -23,7 +23,7 @@ public class TestModel {
 	/**
 	 * This part is to read in the items file and save each item object in an arrayList 
 	 */
-	
+    
 	File itemFile = new File("itemFile");
 	// open a Scanner to read data from File
 	
@@ -150,7 +150,7 @@ public class TestModel {
 	}
 	
 
-	
+    
 	
 	//Current Room!// 
 	Room currentRoom = new Room(); 
