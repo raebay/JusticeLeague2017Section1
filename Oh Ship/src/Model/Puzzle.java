@@ -1,5 +1,5 @@
 package Model;
-public class Puzzle 
+public class Puzzle extends Testing
 {
 	public boolean isSoloved = false; 
 	public String pHint = "";

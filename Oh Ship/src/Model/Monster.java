@@ -4,11 +4,12 @@ import java.util.Set;
 
 
 
-public class Monster //extends Character 
+public class Monster //extends Room//extends Character 
 {
 public String mId = "";
 public String mName = "";
 public String mDescription = "";
+public String mWeapon = "";
 public String mSurrender = "";
 	
 private Character character;
@@ -23,7 +24,7 @@ public Monster()
 	
 }
 
-public Monster(String mId, String mName, String mDescription, String mSurrender)
+public Monster(String mId, String mName, String mDescription, String mWeapon, String mSurrender)
 {
 	this.mId = mId;
 	this.mName = mName;
@@ -33,11 +34,12 @@ public Monster(String mId, String mName, String mDescription, String mSurrender)
 }
 	
 
-public Monster(String mId, String mName, String mDescription, String mSurrender, Character character)
+public Monster(String mId, String mName, String mDescription, String mWeapon, String mSurrender ,Character character)
 {
 	this.mId = mId;
 	this.mName = mName;
 	this.mDescription = mDescription;
+	this.mWeapon = mWeapon;
 	this.mSurrender = mSurrender;
 	this.character = character;
 }
@@ -71,6 +73,13 @@ public void setMDescription(String mDescription) {
 	this.mDescription = mDescription;
 }
 
+public String getMWeapon() {
+	return mWeapon;
+}
+
+public void setMWeapon(String mWeapon) {
+	this.mWeapon = mWeapon;
+}
 public String getMSurrender() {
 	return mSurrender;
 }
@@ -79,7 +88,13 @@ public void setMSurrender(String mSurrender) {
 	this.mSurrender = mSurrender;
 }
 	
-	
+@Override
+public String toString()
+{
+	   return "Monster: Monster ID=" + mId + ", Monster Name=" + mName
+	         + ", Monster Description=" + mDescription + ", Monster weapon=" + mWeapon
+	         + "";
+}
 	
 	
 	

@@ -19,7 +19,7 @@ public class TestModel {
 	//Creating array list for room and item objects to be stored
 	public static ArrayList<Room> rooms = new ArrayList<>();
 	public static ArrayList<Item> items = new ArrayList<>(); 
-
+    public static ArrayList<Monster> monsters = new ArrayList<>();
 	/**
 	 * This part is to read in the items file and save each item object in an arrayList 
 	 */
@@ -59,7 +59,45 @@ public class TestModel {
 
 	}
 	
+	/**
+	 * This part is to read in the monsters file and save each monster object in an arrayList 
+	 */
 	
+	File monsterFile = new File("monsterFile");
+	// open a Scanner to read data from File
+	
+	Scanner monsterReader = null;  
+	{
+   try
+	{
+      monsterReader = new Scanner(monsterFile);
+	
+  } 
+	catch (FileNotFoundException e)
+  {
+      System.out.println("File not found - terminating program");
+      System.exit(0);
+  	e.printStackTrace();
+  }
+  
+
+   //Read item into array list
+    while (monsterReader.hasNext())
+    {
+    	// read item
+    	String mId = monsterReader.nextLine();
+    	String mName = monsterReader.nextLine();
+    	String mDescription = monsterReader.nextLine();
+    	String mWeapon = monsterReader.nextLine();
+    	String mSurrender = monsterReader.nextLine();
+    	// create new Item instance
+    	Monster temp = new Monster(mId, mName, mDescription, mWeapon, mSurrender); 
+    	
+    	//adding whole temp object to items arrayList
+    	monsters.add(temp);	    	
+    	}
+
+	}
 	/**
 	 * This part is to read in the room file and save each room object in an arrayList 
 	 */
