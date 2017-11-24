@@ -39,7 +39,7 @@ public class Inventory
 	   {
 		   for(Item item: items)
 		   {
-			   return item.getiName();
+			   return "-Your Inventory-" + "\r\n" + item.getiName();
 		   }
 		   return " ";
 	   }

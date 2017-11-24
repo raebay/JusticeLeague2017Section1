@@ -210,6 +210,18 @@ public class TestModel {
 				
 		}
 		
+		if(input.contains("inspect") || input.contains("Inspect"))
+		{
+			String itemName = input.substring(input.indexOf("t", 5) + 2, input.length()); 
+			Item item = TestModel.findNameItem(itemName);
+			output = item.getiName() + "\r\n" + item.getiDescription(); 
+		}
+		
+		if(input.equalsIgnoreCase("Get current room"))
+		{
+			output = currentRoom.rName; 
+		}
+		
 		return output;
 
 	}

@@ -2,31 +2,39 @@ Puzzle 1
 The monitor is stuck replaying the footadge of Sup. Matthews putting something in his locker. 
 Maybe what's in the locker will let you open the staircase door? 
 Rooms
+Items
 Puzzle 2
 Even though you have the access key, the power must be on to open the door. 
 The generator manual might tell you how to restart the generator. This might give you power. 
 Rooms
+Items
 Puzzle 3
 Defeat all of the pirates in this room! 
 Crew member in 2.b tells you that the cargo area should be clear before the Captain is saved. 
 Rooms
+Items
 Puzzle 4
 There is a note with the word "Help" written on it.
 Crew member in the dining hall tells you he left a note in a staircase somewhere. If you bring it to him, he might help you out. 
 Rooms
+Items
 Puzzle 5
 Figure out how to open the storage room. 
 You must have to type something into the keypad...
 Rooms
+Items
 Puzzle 6
 You are finally on the top deck, and you notice that there is a life boat and a crews nest that you could climb to get a better view of the surrounding area.
 Getting on the life boat wont do much good if you don't know which direction you need to go in. 
 Rooms
+Items
 Puzzle 7
 Save all the crew members  
 Hint
 Rooms
+Items
 Puzzle 8
 The Captain is being held hostage! 
 Entering the bridge will start the fight with the pirate captain.  
 Rooms
+Items

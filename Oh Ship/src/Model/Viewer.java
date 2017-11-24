@@ -205,7 +205,10 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 		{
 			output.setText("- Commands List -"
 					+ "\r\nGo to [RoomID]"
-					+ "\r\nSearch");
+					+ "\r\nSearch"
+					+ "\r\nPick up [item name]"
+					+ "\r\nCheck inventory"
+					+ "\r\nInspect [item name]");
 		}
 		
 		// submit button event
