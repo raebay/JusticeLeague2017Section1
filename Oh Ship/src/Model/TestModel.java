@@ -36,7 +36,7 @@ public class TestModel {
   } 
 	catch (FileNotFoundException e)
   {
-      System.out.println("File not found - terminating program");
+      System.out.println("File not found - terminating program - item");
       System.exit(0);
   	e.printStackTrace();
   }
@@ -63,7 +63,7 @@ public class TestModel {
 	 * This part is to read in the monsters file and save each monster object in an arrayList 
 	 */
 	
-	File monsterFile = new File("monsterFile");
+	File monsterFile = new File("monsterFile.txt");
 	// open a Scanner to read data from File
 	
 	Scanner monsterReader = null;  
@@ -75,7 +75,7 @@ public class TestModel {
   } 
 	catch (FileNotFoundException e)
   {
-      System.out.println("File not found - terminating program");
+      System.out.println("File not found - terminating program - monster");
       System.exit(0);
   	e.printStackTrace();
   }
@@ -114,7 +114,7 @@ public class TestModel {
   } 
 	catch (FileNotFoundException e)
   {
-      System.out.println("File not found - terminating program");
+      System.out.println("File not found - terminating program - room");
       System.exit(0);
   	e.printStackTrace();
   }
