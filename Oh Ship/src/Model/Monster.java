@@ -29,6 +29,7 @@ public Monster(String mId, String mName, String mDescription, String mWeapon, St
 	this.mId = mId;
 	this.mName = mName;
 	this.mDescription = mDescription;
+	this.mWeapon = mWeapon;
 	this.mSurrender = mSurrender;
 	
 }
@@ -103,9 +104,8 @@ public void setDefeated(boolean isDefeated)
 @Override
 public String toString()
 {
-	   return "Monster: Monster ID=" + mId + ", Monster Name=" + mName
-	         + ", Monster Description=" + mDescription + ", Monster weapon=" + mWeapon
-	         + "";
+	   return "Monster: Monster ID=" + mId + ", Monster Name=" + mName;
+	        
 }
 	
 	

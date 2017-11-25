@@ -4,8 +4,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Model.*;
-
 
 public class TestModel {
 
@@ -139,8 +137,8 @@ public class TestModel {
     	temps.setrItems(rItems);
 
     	//adding Monster objects
-    	Monster rMonsters = new Monster(monsters, monsters, monsters, monsters, null);
-    	rMonsters.setMName(monsters);
+    	Monster rMonsters = TestModel.findMonster(monsters);
+    
     	temps.setrMonsters(rMonsters);
     	
     	//adding whole temps object to rooms arrayList
@@ -232,13 +230,15 @@ public class TestModel {
 		if(input.contains("Search") || input.contains("search"))
 		{
 			currentRoom.getrItems();
+			currentRoom.getrMonsters();
 			
-			if(currentRoom.getrItems() == null)
+			
+			if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() == null) )
 			{
 				output = "You look around but find nothing you can use.";
 			}
 			else
-			output = "You look around the room, and " + currentRoom.getrItems();
+			output = "You look around the room, and " + currentRoom.getrItems() + ", " + currentRoom.getrMonsters();
 		}
 		
 		if(input.contains("pick up") || input.contains("Pick up"))
@@ -315,7 +315,19 @@ public class TestModel {
 
 	}
 	
-	
+	public static Monster findMonster(String mId)
+	{
+		for (Monster obj: monsters)
+		{
+			if(obj.mId.equalsIgnoreCase(mId))
+			{
+				return obj;
+			}
+
+		}
+		return null;
+
+	}
 	
 	
 }

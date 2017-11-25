@@ -33,7 +33,7 @@ Supervisor's Office
 The noise coming from this room was a masked man. He was looking for something on the unconscious body of the supervisor. He notices you, now what? What was this man doing here? The supervisor is still breathing, the man isn't. There's a light coming from the dark utility closet. 
 1.e, 1.g
 Items
-Monster 1
+M1
 1.g
 Utility Closet 
 The room is dark, but the security monitor is on. Nothing else here but tools and documents on the floor. 
@@ -57,7 +57,7 @@ Open Room Connecting Quarters
 As you open the door, you get knocked off your feet! This time he's carrying a bat. This is the only way to get to ghe deck and come out alive. You must fight him to get to the next room. 
 2.c, 2.a
 Items
-Monster 2
+M2
 2.c
 Hallway
 This hallway is dark and all of the doors lining each side are locked. There is a light shining from under one of the doors, and at the end of the hallway there is an opening. 
@@ -99,7 +99,7 @@ Kitchen
 Regular kitchen. It is not in use and is neat and organized, everything where it should be. There are knives that look like they would make a good weapon...
 2.g, 2.h
 i8
-Monsters
+M3
 RoomID
 RoomName
 Description
