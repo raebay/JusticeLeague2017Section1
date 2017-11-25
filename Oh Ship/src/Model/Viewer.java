@@ -95,7 +95,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 	private void initUI(Stage stage)
 	{
 		//initial window pane and setting variables
-		int windowSizeX = 600;
+		int windowSizeX = 800;
 		int windowSizeY = 400;
 		BorderPane root = new BorderPane();
 		
@@ -104,7 +104,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 		right.setStyle(" -fx-background-color: #888888;");
 		right.setPadding(new Insets(10,15,10,15));
 		right.setSpacing(10);
-		right.setPrefSize(windowSizeX/3, windowSizeY);
+		right.setPrefSize(windowSizeX/2, windowSizeY);
 		// output field
 		output = new TextArea();
 		output.setWrapText(true);
@@ -112,6 +112,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 		output.setText("Oh Ship, press options to save, press help to get list of commands");
 		output.setEditable(false);
 		output.setPrefHeight((3*windowSizeY)/4);
+		output.setScrollTop(Double.MAX_VALUE);
 		// input field
 		input = new TextField();
 		input.setAlignment(Pos.TOP_LEFT);
@@ -228,12 +229,14 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 		// examine button event
 		if(event.getSource() == btnHelp) 
 		{
-			output.setText("- Commands List -"
+			String helpStr = ("\r\n"
+					+ "- Commands List -"
 					+ "\r\nGo to [RoomID]"
 					+ "\r\nSearch"
 					+ "\r\nPick up [item name]"
 					+ "\r\nCheck inventory"
 					+ "\r\nInspect [item name]");
+			updateConsole(helpStr);
 		}
 		
 		// submit button event
@@ -242,6 +245,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 		if(event.getSource() == btnSubmit)
 		{
 			String in = input.getText();
+			updateConsole("PLAYER: " + in);
 			// calls update in the model class
 			String out = test.update(in);
 			// calls update in the view class
@@ -249,7 +253,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 			input.setText("");
 			
 			//call method to update map view if player location has changed
-			if (in.contains("Go to")) {
+			if (in.contains("Go to") || in.contains("go to")) {
 				updateMapView();
 			}
 			
@@ -363,7 +367,13 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 	
 	public void updateConsole(String out) 
 	{
-		output.setText(out);
+		if (out.contains("PLAYER: ")) {
+			output.appendText("\r\n" + "\r\n" + out + "\r\n");
+		} else {
+			output.appendText("\r\n" + out);
+		}
+		
+		//output.appendText("\r\n" + out);
 	}
 	
 	

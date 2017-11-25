@@ -182,28 +182,31 @@ public class TestModel {
 	{
 		if (output.isEmpty()) 
 		{
-			output = "PLAYER: " + input + "\r\nCommand not recognized. \r\nPress help for list of commands";
+			output = "\r\nCommand not recognized. \r\nPress help for list of commands";
 		}
 		else
 		{
-			output = output + "\r\nPLAYER: " + input + "\r\nCommand not recognized. \r\nPress help for list of commands";
+			output = "\r\nCommand not recognized. \r\nPress help for list of commands";
 		}
 
 		if(input.contains("options")) {
-			output = "- Options Commands -"
+			output = "\r\n"
+					+ "- Options Commands -"
 					+ "\r\nload [unique ID]"
 					+ "\r\nsave [unique ID]";
 		}
 		
 		if(input.contains("load")) {
 			//parse string to find the player's unique id, then load file with that name.
-			output = "**File Loaded**"
+			output = "\r\n"
+					+ "**File Loaded**"
 					+ "\r\njk nothing happened.";		
 		}
 		
 		if(input.contains("save")) {
 			//parse string to find the player's unique id, then save file with that name.
-			output = "**File Saved**"
+			output = "\r\n"
+					+ "**File Saved**"
 					+ "\r\nthis is a lie";		
 		}
 		
