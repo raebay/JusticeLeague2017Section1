@@ -64,6 +64,20 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 	Image img2h;
 	Image img2i;
 	Image img2j;
+	Image img3a;
+	Image img3b;
+	Image img3c;
+	Image img3d;
+	Image img3e;
+	Image img4a;
+	Image img4b;
+	Image img4c;
+	Image img4d;
+	Image img4e;
+	Image img4f;
+	Image img4g;
+	Image img4h;
+	
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception
@@ -133,9 +147,20 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 		img2h = new Image("/resources/2H_DiningHall.png");
 		img2i = new Image("/resources/2I_CargoArea.png");
 		img2j = new Image("/resources/2J_Kitchen.png");
+		img3a = new Image("/resources/3A_Staircase1_Middle.png");
+		img3b = new Image("/resources/3B_Hall.png");
+		img3c = new Image("/resources/3C_Kitchen.png");
+		img3d = new Image("/resources/3D_StorageRoom.png");
+		img3e = new Image("/resources/3E_Staircase2_Upper.png");
+		img4a = new Image("/resources/4A_Deck.png");
+		img4b = new Image("/resources/4B_Overlook.png");
+		img4c = new Image("/resources/4C_LoungeArea.png");
+		img4d = new Image("/resources/4D_Staircase4_Upper.png");
+		img4e = new Image("/resources/4E_Hall.png");
+		img4f = new Image("/resources/4F_Bridge.png");
+		img4g = new Image("/resources/4G_CrewsNest.png");
+		img4h = new Image("/resources/4H_Lifeboat.png");
 		
-
-
 		
 		// image view that displays selected map image
 		imgView = new ImageView();
@@ -304,7 +329,36 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 			imgView.setImage(img2i);
 		} else if (test.currentRoomID.equals("2.j")) {
 			imgView.setImage(img2j);
+		} else if (test.currentRoomID.equals("3.a")) {
+			imgView.setImage(img3a);
+		} else if (test.currentRoomID.equals("3.b")) {
+			imgView.setImage(img3b);
+		} else if (test.currentRoomID.equals("3.c")) {
+			imgView.setImage(img3c);
+		} else if (test.currentRoomID.equals("3.d")) {
+			imgView.setImage(img3d);
+		} else if (test.currentRoomID.equals("3.e")) {
+			imgView.setImage(img3e);
+		} else if (test.currentRoomID.equals("4.a")) {
+			imgView.setImage(img4a);
+		} else if (test.currentRoomID.equals("4.b")) {
+			imgView.setImage(img4b);
+		} else if (test.currentRoomID.equals("4.c")) {
+			imgView.setImage(img4c);
+		} else if (test.currentRoomID.equals("4.d")) {
+			imgView.setImage(img4d);
+		} else if (test.currentRoomID.equals("4.e")) {
+			imgView.setImage(img4e);
+		} else if (test.currentRoomID.equals("4.f")) {
+			imgView.setImage(img4f);
+		} else if (test.currentRoomID.equals("4.g")) {
+			imgView.setImage(img4g);
+		} else if (test.currentRoomID.equals("4.h")) {
+			imgView.setImage(img4h);
 		} 
+		
+		
+		
 	}
 	
 	public void updateConsole(String out) 

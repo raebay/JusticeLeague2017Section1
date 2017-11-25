@@ -212,12 +212,16 @@ public class TestModel {
 			String roomID = input.substring(input.indexOf("o", 4) + 2, input.length()); 
 			currentRoom = findRoom(roomID); 
 			//output = output + "\r\n" + in;
-			output = currentRoom.getrName() + "\r\n" + currentRoom.getrDescription();
-
 			
-			//set the current room ID
-			currentRoomID = currentRoom.getrID();
-			System.out.println(currentRoomID);
+			if (currentRoom != null) {
+				output = currentRoom.getrName() + "\r\n" + currentRoom.getrDescription();
+	
+				//set the current room ID
+				currentRoomID = currentRoom.getrID();
+				System.out.println(currentRoomID);
+			} else { 
+				output = "Room not found, make sure you typed it in correctly";
+			}
 		}
 		
 		
