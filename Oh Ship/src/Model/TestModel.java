@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Model.Item.ItemType;
+
 
 public class TestModel {
 
@@ -47,9 +49,28 @@ public class TestModel {
     	String iID = itemReader.nextLine();
     	String iName = itemReader.nextLine();
     	String iDescription = itemReader.nextLine();
+    	String iType = itemReader.nextLine(); 
     	
     	// create new Item instance
     	Item temp = new Item(iID, iName, iDescription); 
+    	
+    	switch(iType)
+    	{
+    		case "Artifact": 
+    			temp = new Artifact(iID, iName, iDescription); 
+    			break; 
+    		case "Equippable": 
+    			temp = new EquippableItem(iID, iName, iDescription); 
+    			break; 
+    		case "Consumable":
+    			temp = new ConsumableItem(iID, iName, iDescription); 
+    			break; 
+    		default:
+    			System.out.println("Default item type" + ItemType.ARTIFACT);
+    			temp.setItemType(ItemType.ARTIFACT);
+    			break;
+    	}
+    	
     	
     	//adding whole temp object to items arrayList
     	items.add(temp);	    	
@@ -147,9 +168,6 @@ public class TestModel {
 
 	}
 	
-
-    
-	
 	//Current Room!// 
 	Room currentRoom = new Room(); 
 	
@@ -214,13 +232,17 @@ public class TestModel {
 			currentRoom = findRoom(roomID); 
 			//output = output + "\r\n" + in;
 			
-			if (currentRoom != null) {
+			if (currentRoom != null) 
+			{
 				output = currentRoom.getrName() + "\r\n" + currentRoom.getrDescription();
 	
 				//set the current room ID
 				currentRoomID = currentRoom.getrID();
 				System.out.println(currentRoomID);
-			} else { 
+			}
+			
+			else 
+			{ 
 				output = "Room not found, make sure you typed it in correctly";
 			}
 		}
@@ -237,6 +259,7 @@ public class TestModel {
 			{
 				output = "You look around but find nothing you can use.";
 			}
+			
 			else
 			output = "You look around the room, and " + currentRoom.getrItems() + ", " + currentRoom.getrMonsters();
 		}
@@ -276,7 +299,7 @@ public class TestModel {
 	{
 		for (Room obj: rooms)
 		{
-			if(obj.rID.equals(roomID))
+			if(obj.rID.equals(roomID.trim()))
 			{
 				return obj;
 			}
@@ -290,7 +313,7 @@ public class TestModel {
 	{
 		for (Item obj: items)
 		{
-			if(obj.iId.equalsIgnoreCase(itemID))
+			if(obj.iId.equalsIgnoreCase(itemID.trim()))
 			{
 				return obj;
 			}
@@ -305,7 +328,7 @@ public class TestModel {
 	{
 		for (Item obj: items)
 		{
-			if(obj.iName.equalsIgnoreCase(itemName))
+			if(obj.iName.equalsIgnoreCase(itemName.trim()))
 			{
 				return obj;
 			}			
@@ -314,12 +337,13 @@ public class TestModel {
 		return null;
 
 	}
-	
+
+	//Method finds an item object based ono its item name 
 	public static Monster findMonster(String mId)
 	{
 		for (Monster obj: monsters)
 		{
-			if(obj.mId.equalsIgnoreCase(mId))
+			if(obj.mId.equalsIgnoreCase(mId.trim()))
 			{
 				return obj;
 			}

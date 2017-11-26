@@ -4,6 +4,7 @@ import View.Console;
 
 public class ConsumableItem extends Item 
 {
+	
 	Console view;
 	
 	public String consumableItemId;
@@ -12,29 +13,17 @@ public class ConsumableItem extends Item
 	{
 		super("", "", "");
 		this.consumableItemId =  "";
-	}
+	}	
 	
-	
-	public ConsumableItem(String iId, String iName, String iDescription, String consumableItemId)
+	public ConsumableItem(String iId, String iName, String iDescription)
 	{
 		super(iId, iName, iDescription);
-		this.consumableItemId = consumableItemId;
 	}
 	
 	public String getConsumableItemId()
 	{
 		return consumableItemId;
 	}
-	
-	
-	
-	public void setConsumableItemId(String consumableItemID)
-	{
-		this.consumableItemId = consumableItemId;
-	}
-	
-	
-	
 	
 	@Override
 	public String toString()

@@ -8,6 +8,7 @@ public class Item
 	public String iName; 
 	public String iDescription; 
 	public ArrayList<EquippableItem> equippableitemInventory;
+	public ItemType itemType; 
 	
 	
 	public Item(String iID, String iName, String iDescription)
@@ -67,6 +68,16 @@ public class Item
 		this.equippableitemInventory = equippableitem;
 	}
 	
+	public ItemType getItemType()
+	{
+		return itemType;
+	}
+	
+	public void setItemType(ItemType itemType)
+	{
+		this.itemType = itemType;
+	}
+	
 	public void drop()
 	{
 		
@@ -75,6 +86,13 @@ public class Item
 	public void pickupEquippableitem(EquippableItem equippableitem)
 	{
 		equippableitemInventory.add(equippableitem);
+	}
+	
+	public enum ItemType
+	{
+		ARTIFACT,
+		CONSUMABLE,
+		EQUIPPABLE
 	}
 	
 	//toString method

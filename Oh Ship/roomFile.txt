@@ -68,13 +68,13 @@ Monsters
 Crews Quarters
 You are in a small room with a bunk bed on each side. There is a medical kit on one of the beds.
 2.c
-i5
+i6
 Monsters
 2.e
 Officer's Quarters
 This is a small room with a bunk bed, a closet, and a desk.
 2.g
-i7
+i8
 Monsters
 2.g
 Hallway 2
@@ -86,89 +86,101 @@ Monsters
 Dining Hall
 The room is too dark to navigate through, but you can see a bullet proof vest on a table.
 2.f, 2.j
-i10
+i11
 Monsters
 2.i
 General Cargo Area
 This is a very large room that is filled almost to capacity with shipping containers. You can hear multiple pirates talking to each other throughout the cargo area.
 2.g
 Items
-Monster Fight
+M3
 2.j
 Kitchen
 Regular kitchen. It is not in use and is neat and organized, everything where it should be. There are knives that look like they would make a good weapon...
 2.g, 2.h
-i8
-M3
-RoomID
-RoomName
-Description
-Doors
+i9
+Monsters
+2.f
+Main Lobby
+A large, open lobby area. Two pirates have a hostage next to the door to the dining area. They are both facing away from you, but you should not try to fight them because they could easily kill their hostage. There is a stairway leading to the next floor, and hallways on each side of the room.
+2.c, 2.g, 2.h, 3.a
+Items
+M4
+3.a
+Staircase 1
+From the main lobby, there is a staircase leading to the 3rd floor hallway.
+2.f, 3.b
 Items
 Monsters
-RoomID
-RoomName
-Description
-Doors
+3.b
+Hall 1
+Coming up from the staircase, you reach the 3rd floor hallway. There is another staircase to your left to go up to an even higher floor. Straight ahead, there is the navigation room.
+3.a, 3.e, 3.c
 Items
 Monsters
-RoomID
-RoomName
-Description
-Doors
+3.c
+Navigation Room
+From the navigation room, you can go back into the hallway or continue right to the storage room. There is paperwork and dust everywhere and the romo looks as if it has not been cleaned in ages; probably because it has not. 
+3.b, 3.d
 Items
 Monsters
-RoomID
-RoomName
-Description
-Doors
+3.d
+Storage Room
+What was once an organized storage room, has turned into a junk room. You barely have any room to move around without fear if injuring yourself. From the storage room, your only exit is through the kitchen and back into the hallway.
+3.c
+i7
+M5
+3.e
+Staircase 2
+Once you reach up to the 4th floor, your view is the deck.
+3.b, 4.a
+Items
+M6
+4.a
+Deck
+You reach up to the deck and you can hardly see from the rain. The ship is swaying back and forth,. You look around and see a bunch of containers, and in the distance you can make out a door across the ship. Should you go for the door? Then, in the corner of your eye, you see a flash followed by a large BOOM! You look where the flash came across the sea, and there seems to be an outline of a ship...or are you just hallucinating? Could it be that somebody has already come to rescue you? Your mind is racing, and all you know is that you want this all to be over. 
+3.e, 4.b, 4.d, 4.c
 Items
 Monsters
-RoomID
-RoomName
-Description
-Doors
+4.b
+Overlook
+You decide to look at the shadow outline thinking that it might be another ship coming to your distress signal. You get over to teh railing and see that it's actually a pirate ship! You quickly turn around pretending that you didn't just see the ship. Down the railing you make out a lifeboat that looks to be intact from the explosion. Could this be your escape? Do you choose to just save yourself? As you are contemplating, you turn around to look back at the pirate ship and see if it was real and are face to face with a pirate. He has you cornered, and you have no way out. You must fight to get through him.
+4.a
+Items
+M7
+4.c
+Lounge Area
+The door leads to a lounge area. It's rather smaller than you would imagine. There is a couch and a couple of chairs faced towards teh tv that is all static. You try to mess with the entennas but it still wont work. The tv all of a sudden cuts out and turns completely black. You need to get out of there. You see a staircase in the corner of the room that looks like it's a good place to go. You don't want to go back on the deck. 
+4.a, 4.d
+i5
+Monsters
+4.d
+Staircase 4
+You go into a staircase, the light is dimmed and you can hardly see the steps in front of you. You follow the stairs up, and it leads to a dimmed hallway. 
+4.a, 4.c, 4.e
 Items
 Monsters
-RoomID
-RoomName
-Description
-Doors
+4.e
+Hallway
+The hallway has broken lights, it looks like it is straight out of a horror film. You walk down the hallway and dodge the broken lights that are all over the ground. There is a ladder in the corner of the hallway that says exit, it must lead up to the crews nest. You contemplate going up there but do you really want to climb in the dark? There is a door that leads to the bridge. That must be where the capitain is.
+4.d, 4.f, 4.g
 Items
 Monsters
-RoomID
-RoomName
-Description
-Doors
+4.f
+The bridge
+You open up the door and sure enough there is the capitain. He looks to be..a..hostage? BAM! The door is slammed shut behind you. You turn around and see a pirate. He must be the leader, he just laughs that you've got this far. You can see the capitain is not in the best of shape, whatever you do, you need to hurry and get him to safety. 
+4.e
+Items
+M9
+4.g
+Crews Nest
+The crews nest is locked, you need to figure out how to open it. There must be a key somewhere...Once you open the door, you reach the crews nest and you climb what seems like forever. You reach the top and you can see everything. In the distance to teh east, you even see land! You quickly close the hatch and get back in cover.
+4.e
 Items
 Monsters
-RoomID
-RoomName
-Description
-Doors
-Items
-Monsters
-RoomID
-RoomName
-Description
-Doors
-Items
-Monsters
-RoomID
-RoomName
-Description
-Doors
-Items
-Monsters
-RoomID
-RoomName
-Description
-Doors
-Items
-Monsters
-RoomID
-RoomName
-Description
-Doors
-Items
+4.h
+Lifeboat
+You reach a lifeboat. The crank is still intact and you can lower it into the water and make your escape. 
+4.b
+Items 
 Monsters
