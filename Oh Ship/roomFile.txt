@@ -1,98 +1,136 @@
 1.a
 Engine Room A
 You wake up with a slight headache. You get up. The last thing you can remember is aloud explosion and the engine room shaking. Seems like you're alone. Where did your crewmates go? Even after...whatever happened, the engine is still going, but the emergency lights are flashing. Other than that, nothing seems out of place. You wonder where your mate is and you notice some blood on the floor. 
-1.b
+D1
 None
-Monsters
+None
+P2
 1.b
 Hall 1 
 You enter this room, but it looks different than you remember. The lights strobing, with wrenches and tools on the ground. Was it the explosion that shook the entire ship? 
-1.a, 1.c
+D1, D2
 None
-Monsters
+None
+Puzzle
 1.c
 Engine Room B
 As you open the door, you see your mate on the floor, possibly unconsious or even dead. The engine controls of this room are turned off. You might have to turn this one on. 
-1.d, 1.b
+D3, D2
 i1
 Monsters
+P2
 1.d
 Locker Room
 The room is hot as always, but you don't notice because you were sweating when you passed out anyways. All the lockers seem to be shut, as if no one took their belongings before departing. Your locker is also here, and doesn't appear to be tampered with. Is your stuff still in there? 
-1.c, 1.e
+D3, D4
 i2, i3
 Monsters
+Puzzle
 1.e
 Hall 2
 You close the door to the locker room behind you, noticing the closed doors all along the hall. You could try to open them, but you know they won't lead to the deck. The door on one side is the main staircase that will take you to the exit. You hear some noise coming from the Supervisors Office.
-1.d, 1.f, 1.h
+D4, D5, D6
 Items
 Monsters
+Puzzle
 1.f
 Supervisor's Office
 The noise coming from this room was a masked man. He was looking for something on the unconscious body of the supervisor. He notices you, now what? What was this man doing here? The supervisor is still breathing, the man isn't. There's a light coming from the dark utility closet. 
-1.e, 1.g
+D5, D7
 Items
 M1
+Puzzle
 1.g
 Utility Closet 
 The room is dark, but the security monitor is on. Nothing else here but tools and documents on the floor. 
-1.f
+D7
 Items
 Monsters
+P1
 1.h
 Staircase 1
 The staircase lights are flashing as well, it is almost as if the explosion had affected all of the lights on the boat. You can proceed to go to the next level of the ship if you choose. You must get to the deck and find out what's going on. 
-2.a, 1.e
+D8, D6
 i4
 Monsters
+Puzzle
 2.a
 Access Room to 2nd Floor
 From here you would normally go into the quarters, but the doors are locked. You try the access key and it doesn't work. The power seems to be out from this area on, how do you turn it back on?
-2.b, 1.h
+D9, D8
 Items
 Monsters
+P7
 2.b
 Open Room Connecting Quarters
 As you open the door, you get knocked off your feet! This time he's carrying a bat. This is the only way to get to ghe deck and come out alive. You must fight him to get to the next room. 
-2.c, 2.a
+D10, D9
 Items
 M2
+Puzzle
 2.c
 Hallway
 This hallway is dark and all of the doors lining each side are locked. There is a light shining from under one of the doors, and at the end of the hallway there is an opening. 
-2.b, 2.f, 2.d
+D10, D12, D11
 Items
 Monsters
+Puzzle
 2.d
 Crews Quarters
 You are in a small room with a bunk bed on each side. There is a medical kit on one of the beds.
+<<<<<<< HEAD
 2.c
 i6
+=======
+D11
+i5
+>>>>>>> 696942a6a658139a26c58e589727f9551d7d1d8b
 Monsters
+Puzzle
 2.e
 Officer's Quarters
 This is a small room with a bunk bed, a closet, and a desk.
+<<<<<<< HEAD
 2.g
 i8
+=======
+D13
+i7
+>>>>>>> 696942a6a658139a26c58e589727f9551d7d1d8b
 Monsters
+Puzzle
 2.g
 Hallway 2
 This hallway is as dark as the last one, but you can make out doors leading to the kitchen and office quarters, and an opening on each end of the hall leading to the cargo area and main lobby. 
-2.i, 2.j, 2.f, 2.e
+D14, D15, D16, D13
 Items
 Monsters
+Puzzle
+2.f
+Main lobby
+This is a small room with a bunk bed, a closet, and a desk.
+D13
+i7
+Monsters
+Puzzle
 2.h
 Dining Hall
 The room is too dark to navigate through, but you can see a bullet proof vest on a table.
+<<<<<<< HEAD
 2.f, 2.j
 i11
+=======
+D17, D19
+i10
+>>>>>>> 696942a6a658139a26c58e589727f9551d7d1d8b
 Monsters
+Puzzle
 2.i
 General Cargo Area
 This is a very large room that is filled almost to capacity with shipping containers. You can hear multiple pirates talking to each other throughout the cargo area.
-2.g
+D14
 Items
+<<<<<<< HEAD
 M3
 2.j
 Kitchen
@@ -184,3 +222,112 @@ You reach a lifeboat. The crank is still intact and you can lower it into the wa
 4.b
 Items 
 Monsters
+=======
+Monster Fight
+Puzzle
+2.j
+Kitchen
+Regular kitchen. It is not in use and is neat and organized, everything where it should be. There are knives that look like they would make a good weapon...
+D15, D19
+i8
+M3
+P3
+2.f
+Main Lobby
+A large, open lobby area. Two pirates have a hostage next to a door to the dining area. They are both facing away from you, but you should not try to fight them because they could easily kill their hostage. There is a stairway leading to the next floor, and hallways on each side of the room.
+D12, D16, D17, D18
+Items
+M4
+Puzzle
+3.a
+Staircase 1
+From the main lobby, there is a staircase leading to the 3rd floor hallway.
+D18, D20
+Items
+Monsters
+P4
+3. b
+Hall 1
+Coming up from the staircase, you reach the 3rd floor hallway. There is another staircase to your left to go up to an even higher floor. Straight ahead, there is the navigation room.
+D20, D22, D21
+Items
+Monsters
+Puzzle
+3.c
+Navigation Room
+From the navigation room, you can go back into the hallway or continue right to the storage room. There is paperwork and dust everywhere and the room looks as if it has not been cleaned in ages; probably because it has not.
+D21, D23
+Items
+Monsters
+P5
+3.d
+Storage Room
+What was once an organized storage room, has turned into a junk room.You barely have any room to move around without fear of injuring yourself. From the storage room, your only exit is through the kitchen and back into the hallway.
+D23
+Items
+M5
+Puzzle
+3.e
+Staircase 2
+Once you reach up to the 4th floor, your view is the deck
+D22, D24
+Items
+M6
+Puzzle
+4.a
+Deck
+You reach up to the deck and you can hardly see from the rain. The ship is swaying back and forth. You look around and see a bunch of containers, and in the distance you can make out a door across the ship.Should you go for the door? Then in the corner of your eye you see a flash followed by a large BOOM! You look where the flash came from across the sea.There looks to be an outline of a ship…?Or are you just hallucinating?Could it be that somebody has already come to rescue you?Your mind is racing, and all you know is that you want this to all be over.
+D24, D25, D26, D27
+Items
+Monsters
+Puzzle
+4.b
+Overlook
+You decide to look at the shadow outline thinking that it might be another ship coming to your distress signal. You get over to the railing and see that it’s actually a pirate ship! You quickly turn around pretending that you didn’t just see the ship. Down the railing you make out an lifeboat that looks to be intact from the explosion. Could this be your escape? Do you choose to just save yourself? As you are contemplating, you turn around to look back at the pirate ship and see if it was real and are face to face with a pirate. He has you cornered, and you have no way out. You must fight and get through him.
+D25
+i8
+M7, M8
+Puzzle
+4.c
+Lounge Area
+The door leads to a lounge area. It’s rather smaller than you would imagine. There is a couch and a couple chairs faced towards the tv that is all static. You try to mess with the antennas but it still won’t work. The tv all the sudden cuts out and turns completely black. You need to get out of here. You see a staircase in the corner of the room that looks like a good place to go. You don’t want to go back on the deck. 
+D26, D27
+Items
+Monsters
+Puzzle
+4.d
+Staircase 4
+You go into a staircase, the light is dimmed and you can hardly see the steps in front of you. You follow the stairs up and it leads to dimmed hallway.
+D27, D28, D29
+Items
+Monsters
+Puzzle
+4.e
+Hallway
+The hallway has broken lights, it looks like it is straight out of a horror film. You walk down the hallway and dodge the broken lights that are all over the ground. There is a ladder in the corner of the hallway that says exit, it must lead up to the crews nest.You contemplate going up there but do you really want to climb in the dark? There is a door that leads to the Bridge. That must be where the captain is.
+D29, D30, D31
+Items
+Monsters
+Puzzle
+4.f
+The Bridge
+You open up the door and sure enough there is the captain. He looks to be..a..hostage? BAM! The door is slammed shut behind you. You turn around and see a pirate. He must be the leader, he just laughs that you got this far. You can see the captain is not in the best of shape, whatever you do you need to hurry and get him to safety.
+D30
+Items
+M9
+P8
+4.g
+Crews Nest
+The crew’s nest is locked, you need to figure out the puzzle to get into it. There must be a key somewhere.. Once open you reach the crews nest and you climb what seems like forever. You reach the top and can see everything. In the distance to the east, you even see land! You quickly close the hatch and get back in cover.
+D31
+Items
+Monsters
+P6
+4.h
+Lifeboat
+You reach a lifeboat. The crank is still intact and you can lower it into the water and make your escape. You still don’t know what direction to go, but the wind is howling and the rain is pelting against you. You need to make a decision quick, save yourself or save the captain.
+D32
+Items
+Monsters
+P8
+>>>>>>> 696942a6a658139a26c58e589727f9551d7d1d8b

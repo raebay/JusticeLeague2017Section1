@@ -57,20 +57,20 @@ public class Testing
 	    	String monsters = roomReader.nextLine(); 
 	    	
 	    	// create new Room instance
-	    	Room temps = new Room(rID, rName, description, doors, items, monsters);
+	 //   	Room temps = new Room(rID, rName, description, doors, items, monsters);
 	    	
 	    	//adding Item objects
-	    	Item rItems = new Item();
-	    	rItems.setiName(items);
-	    	temps.setrItems(rItems);
-/*	    	
+//	    	Item rItems = new Item();
+//	    	rItems.setiName(rItems);
+//	    	temps.setrItems(rItems);
+//    	
 	    	//adding Monster objects
-	    	Monster rMonsters = new Monster(monsters, monsters, monsters, monsters, null);
-	    	rMonsters.setMName(monsters);
-	    	temps.setrMonsters(rMonsters);*/
-	    	
+//	    	Monster rMonsters = new Monster(monsters, monsters, monsters, monsters, null);
+//	    	rMonsters.setMName(monsters);
+//	    	temps.setrMonsters(rMonsters);*/
+//	    	
 	    	//adding whole temps object to rooms arrayList
-	    	rooms.add(temps);	    	
+	  //  	rooms.add(temps);	    	
 	    	}
 	    
 		/**
@@ -98,22 +98,25 @@ public class Testing
 	    while (puzzleReader.hasNext())
 	    {
 	    	// read puzzle
+	    	String pID = puzzleReader.nextLine();
 	    	String pName = puzzleReader.nextLine();
 	    	String pDescription = puzzleReader.nextLine();
 	    	String pHint = puzzleReader.nextLine();
-	    	String pRooms = puzzleReader.nextLine(); 
-	    	String pHintR = puzzleReader.nextLine(); 
+	    	String panswer = puzzleReader.nextLine();
+	    	
+//	    	String pRooms = puzzleReader.nextLine(); 
+//	    	String pHintR = puzzleReader.nextLine(); 
 	    	
 	    	// create new Puzzle instance
-	    	Puzzle temps = new Puzzle(pName, pDescription, pHint, pRooms, pHintR); 
+	    	Puzzle temps = new Puzzle(pID, pName, pDescription, pHint, panswer /**pRooms, pHintR**/); 
 	    	
 	    	//Adding room objects to the puzzles 
-	    	Room pRoom = Testing.findRoom(pRooms);
-	    	temps.setpRooms(pRoom);
-	    	
-	    	//Adding room hint to puzzles 
-	    	Room pHintRoom = Testing.findRoom(pHintR);
-	    	temps.setpHintRoom(pHintRoom);
+//	    	Room pRoom = Testing.findRoom(pRooms);
+//	    	temps.setpRooms(pRoom);
+//	    	
+//	    	//Adding room hint to puzzles 
+//	    	Room pHintRoom = Testing.findRoom(pHintR);
+//	    	temps.setpHintRoom(pHintRoom);
 	    	
 	    	//adding whole temps object to puzzles arrayList
 	    	puzzles.add(temps);	    	

@@ -1,13 +1,7 @@
 package Model;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Scanner;
-
 import Model.Item;
 
-public class Room extends Testing
+public class Room //extends Testing
 {
 
 	public String rID = "";
@@ -15,7 +9,8 @@ public class Room extends Testing
 	public String rDescription = "";
 	public Item rItems; 
 	public Monster rMonsters; 
-	public String doors = "";
+	public Door rDoors;
+	public Puzzle rPuzzles;
 
 	//Room constructors 
     public Room()
@@ -23,22 +18,24 @@ public class Room extends Testing
     	
     }
     
-	public Room(String rID, String rName, String rDescription, String doors, String rItems, String rMonsters)
+	public Room(String rID, String rName, String rDescription, String rDoors, String rItems, String rMonsters, String rPuzzles)
 	{
 		this.rID = rID; 
 		this.rName = rName; 
 		this.rDescription = rDescription;  
-		this.doors = doors; 
+		
+		 
 		
 	}
-	public Room(String rID, String rName, String rDescription, String doors, Item rItems, Monster rMonsters)
+	public Room(String rID, String rName, String rDescription, Door rDoors, Item rItems, Monster rMonsters, Puzzle rPuzzles)
 	{
 		this.rID = rID;
 		this.rName = rName;
 		this.rDescription = rDescription;
-		this.doors = doors; 
+		this.rDoors = rDoors; 
 		this.rItems = rItems;
 		this.rMonsters = rMonsters;
+		this.rPuzzles = rPuzzles;
 	}
 
 	//getters and setters for room attributes
@@ -68,14 +65,14 @@ public class Room extends Testing
 		return rDescription;
 	}
 
-	public void setDoors(String doors) 
+	public void setrDoors(Door rDoors) 
 	{
-		this.doors = doors;
+		this.rDoors = rDoors;
 	}
 	
-	public String getDoors() 
+	public Door getrDoors() 
 	{
-		return doors;
+		return rDoors;
 	}
 
 	public void setrDescription(String rDescription) 
@@ -102,8 +99,31 @@ public class Room extends Testing
 	{
 		this.rMonsters = rMonsters;
 	}
-
+	public Puzzle getrPuzzles() 
+	{
+		return rPuzzles;
+	}
+	public void setrPuzzles(Puzzle rPuzzles)
+	{
+		this.rPuzzles = rPuzzles;
+	}
 	
+
+	public int getRoomNumber()
+	{
+		if( rID.length()!=2)
+			return 0 ;
+		
+		return Integer.parseInt( rID.substring(1)) ;
+	}
+	
+	public char getRoomType()
+	{
+		if( rID.length()!=2)
+			return 0 ;
+		
+		return rID.charAt(0);
+	}
 		//toString method
 	   @Override
 	   public String toString()
