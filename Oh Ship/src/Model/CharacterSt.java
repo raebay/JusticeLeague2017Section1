@@ -1,6 +1,6 @@
 package Model;
 
-public class Character 
+public class CharacterSt 
 {
 private int cHP;
 private int cAttack;
@@ -8,12 +8,12 @@ private int cDef;
 private int cAvoid;
 
 
-public Character()
+public CharacterSt()
 {
 	
 }
 
-public Character(int cHP, int cAttack, int cDef, int cAvoid)
+public CharacterSt(int cHP, int cAttack, int cDef, int cAvoid)
 {
 	this.cHP = cHP;
 	this.cAttack = cAttack;
