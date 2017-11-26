@@ -8,7 +8,6 @@ import Model.Item.ItemType;
 
 
 
-
 public class TestModel {
 
 	//private String input;
@@ -17,62 +16,13 @@ public class TestModel {
 	// this is a temp var that I need to access the current room ID. This is true speghetti code, I'm sorry. -Zach
 	public String currentRoomID;
 	
-	Player player = null;
+	
 	//Creating array list for room and item objects to be stored
 	public static ArrayList<Room> rooms = new ArrayList<>();
 	public static ArrayList<Item> items = new ArrayList<>(); 
     public static ArrayList<Monster> monsters = new ArrayList<>();
-    public static ArrayList<Door> doors = new ArrayList<>();
-    public static ArrayList<Puzzle> puzzles = new ArrayList<>();
-	
-    
-    /**
-	 * This part is to read in the door file and save each door object in an arrayList ***************************************
-	 */
-	
-	File doorFile = new File("doorFile.txt");
-	// open a Scanner to read data from File
-	
-	Scanner doorReader = null;  
-	{
-   try
-	{
-      doorReader = new Scanner(doorFile);
-	
-  } 
-	catch (FileNotFoundException e)
-  {
-      System.out.println("File not found - terminating program - door");
-      System.exit(0);
-  	e.printStackTrace();
-  }
-  
-
-   //Read item into array list
-    while (doorReader.hasNext())
-    {
-    	// read item
-    	String dID = doorReader.nextLine();
-    	String dCR1 = doorReader.nextLine();
-    	String dCR2 = doorReader.nextLine();
-    String dDescription = doorReader.nextLine();
-    	
-    	// create new Item instance
-    	Door temp = new Door(dID, dCR1, dCR2, dDescription); 
-    	
-    	//adding whole temp object to items arrayList
-    	doors.add(temp);	    	
-    	}
-
-	}
-    
-    
-    
-    
-    
-    
-    /**
-	 * This part is to read in the items file and save each item object in an arrayList ***************************************
+	/**
+	 * This part is to read in the items file and save each item object in an arrayList 
 	 */
     
 	File itemFile = new File("itemFile");
@@ -100,28 +50,9 @@ public class TestModel {
     	String iID = itemReader.nextLine();
     	String iName = itemReader.nextLine();
     	String iDescription = itemReader.nextLine();
-    	String iType = itemReader.nextLine(); 
     	
     	// create new Item instance
     	Item temp = new Item(iID, iName, iDescription); 
-    	
-    	switch(iType)
-    	{
-    		case "Artifact": 
-    			temp = new Artifact(iID, iName, iDescription); 
-    			break; 
-    		case "Equippable": 
-    			temp = new EquippableItem(iID, iName, iDescription); 
-    			break; 
-    		case "Consumable":
-    			temp = new ConsumableItem(iID, iName, iDescription); 
-    			break; 
-    		default:
-    			System.out.println("Default item type" + ItemType.ARTIFACT);
-    			temp.setItemType(ItemType.ARTIFACT);
-    			break;
-    	}
-    	
     	
     	//adding whole temp object to items arrayList
     	items.add(temp);	    	
@@ -129,11 +60,8 @@ public class TestModel {
 
 	}
 	
-	
-	
-	
 	/**
-	 * This part is to read in the monster file and save each monster object in an arrayList ***************************************
+	 * This part is to read in the monsters file and save each monster object in an arrayList 
 	 */
 	
 	File monsterFile = new File("monsterFile.txt");
@@ -171,51 +99,8 @@ public class TestModel {
     	}
 
 	}
-	
-	
-	
 	/**
-	 * This part is to read in the puzzle file and save each puzzle object in an arrayList ***************************************
-	 */
-	
-	File puzzleFile = new File("puzzleFile.txt");
-	// open a Scanner to read data from File
-	
-	Scanner puzzleReader = null;  
-	{
-   try
-	{
-      puzzleReader = new Scanner(puzzleFile);
-	
-  } 
-	catch (FileNotFoundException e)
-  {
-      System.out.println("File not found - terminating program - puzzle");
-      System.exit(0);
-  	e.printStackTrace();
-  }
-  
-
-   //Read puzzle into array list
-    while (puzzleReader.hasNext())
-    {
-    	// read puzzle
-    	String pID = puzzleReader.nextLine();
-    	String pName = puzzleReader.nextLine();
-    	String pDescription = puzzleReader.nextLine();
-    	String pHint = puzzleReader.nextLine();
-    	String panswer = puzzleReader.nextLine();
-    	
-    	// create new Item instance
-    	Puzzle temp = new Puzzle(pID, pName, pDescription, pHint, panswer ); 
-    	
-    	//adding whole temp object to items arrayList
-    	puzzles.add(temp);	    	
-    	}
-
-	}
-	/**
-	 * This part is to read in the room file and save each room object in an arrayList ***************************************
+	 * This part is to read in the room file and save each room object in an arrayList 
 	 */
 	
 	File roomFile = new File("roomFile.txt");
@@ -246,9 +131,9 @@ public class TestModel {
     	String doors = roomReader.nextLine(); 
     	String items = roomReader.nextLine(); 
     	String monsters = roomReader.nextLine(); 
-    	String puzzles = roomReader.nextLine();
+    	
     	// create new Room instance
-    	Room temps = new Room(rID, rName, description, doors, items, monsters, puzzles);
+    	Room temps = new Room(rID, rName, description, doors, items, monsters);
     	
     	//Adding Item objects to the Room 
     	Item rItems = TestModel.findItem(items);
@@ -256,22 +141,17 @@ public class TestModel {
 
     	//adding Monster objects
     	Monster rMonsters = TestModel.findMonster(monsters);
-   
+    
     	temps.setrMonsters(rMonsters);
-    	
-    	Puzzle rPuzzles = TestModel.findPuzzle(puzzles);
-    	   
-    	temps.setrPuzzles(rPuzzles);
-    	
-    	Door rDoors = TestModel.findDoor(doors);
-    	   
-    	temps.setrDoors(rDoors);
     	
     	//adding whole temps object to rooms arrayList
     	rooms.add(temps);	    	
     	}
 
 	}
+	
+
+    
 	
 	//Current Room!// 
 	Room currentRoom = new Room(); 
@@ -298,7 +178,7 @@ public class TestModel {
 	{
 		return output;
 	}
-	/**************************************commands****************************************************/
+	
 	public String update(String input) 
 	{
 		if (output.isEmpty()) 
@@ -317,21 +197,18 @@ public class TestModel {
 					+ "\r\nsave [unique ID]";
 		}
 		
-		if(input.contains("load")) 
-		{
+		if(input.contains("load")) {
 			//parse string to find the player's unique id, then load file with that name.
 			output = "\r\n"
 					+ "**File Loaded**"
 					+ "\r\njk nothing happened.";		
 		}
 		
-		if(input.contains("save")) 
-		{
+		if(input.contains("save")) {
 			//parse string to find the player's unique id, then save file with that name.
 			output = "\r\n"
 					+ "**File Saved**"
-					+ "\r\nthis is a lie";
-			
+					+ "\r\nthis is a lie";		
 		}
 		
 		if(input.contains("Go to") || input.contains("go to"))
@@ -340,17 +217,13 @@ public class TestModel {
 			currentRoom = findRoom(roomID); 
 			//output = output + "\r\n" + in;
 			
-			if (currentRoom != null) 
-			{
+			if (currentRoom != null) {
 				output = currentRoom.getrName() + "\r\n" + currentRoom.getrDescription();
 	
 				//set the current room ID
 				currentRoomID = currentRoom.getrID();
 				System.out.println(currentRoomID);
-			}
-			
-			else 
-			{ 
+			} else { 
 				output = "Room not found, make sure you typed it in correctly";
 			}
 		}
@@ -361,258 +234,15 @@ public class TestModel {
 		{
 			currentRoom.getrItems();
 			currentRoom.getrMonsters();
-			currentRoom.getrPuzzles();
 			
 			
-			if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() == null) && (currentRoom.getrPuzzles() == null))
+			if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() == null) )
 			{
 				output = "You look around but find nothing you can use.";
 			}
-
-			else if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() != null) && (currentRoom.getrPuzzles() == null))
-			{
-			output = "You look around the room, and " + currentRoom.getrMonsters();
-			}
-			else if((currentRoom.getrItems() != null) && (currentRoom.getrMonsters() == null) && (currentRoom.getrPuzzles() == null))
-			{
-			output = "You look around the room, and " + currentRoom.getrItems();
-			}
-			else if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() == null) && (currentRoom.getrPuzzles() != null))
-			{
-			output = "You look around the room, and " + currentRoom.getrPuzzles();
-			}
-			else if((currentRoom.getrItems() != null) && (currentRoom.getrMonsters() != null) && (currentRoom.getrPuzzles() == null))
-			{
-			output = "You look around the room, and " + currentRoom.getrItems() + " and, " + currentRoom.getrMonsters();
-			}
-			else if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() != null) && (currentRoom.getrPuzzles() != null))
-			{
-			output = "You look around the room, and " + currentRoom.getrMonsters() + " and, " + currentRoom.getrPuzzles();
-			}
-			else if((currentRoom.getrItems() != null) && (currentRoom.getrMonsters() == null) && (currentRoom.getrPuzzles() != null))
-			{
-			output = "You look around the room, and " + currentRoom.getrItems() + " and, " + currentRoom.getrPuzzles();
-			}
 			else
-				output = "You look around the room, and " + currentRoom.getrItems() + " and, " + currentRoom.getrMonsters() + " and, " + currentRoom.getrPuzzles();
+			output = "You look around the room, and " + currentRoom.getrItems() + ", " + currentRoom.getrMonsters();
 		}
-		
-		if(input.contains("examine m") || input.contains("Examine m"))
-		{
-			
-			
-			 if(currentRoom.rID.equals("1.f"))
-			{
-				output= currentRoom.getrMonsters().mDescription;
-			      }
-			else if(currentRoom.rID.equals("2.b"))
-			{
-				output= currentRoom.getrMonsters().mDescription;
-			      }
-			else if(currentRoom.rID.equals("2.j"))
-			{
-				output= currentRoom.getrMonsters().mDescription;
-			      }
-			else if(currentRoom.rID.equals("2.f"))
-			{
-				output= currentRoom.getrMonsters().mDescription;
-			      }
-			else if(currentRoom.rID.equals("3.d"))
-			{
-				output= currentRoom.getrMonsters().mDescription;
-			      }
-			else if(currentRoom.rID.equals("3.e"))
-			{
-				output= currentRoom.getrMonsters().mDescription;
-			      }
-			else if(currentRoom.rID.equals("4.b"))
-			{
-				output= currentRoom.getrMonsters().mDescription;
-			      }
-			else if(currentRoom.rID.equals("4.f"))
-			{
-				output= currentRoom.getrMonsters().mDescription;
-			      }
-			else 
-			{
-				output= "problem!!";
-			}	
-		}
-		if(input.contains("examine i") || input.contains("Examine i"))
-		{
-			
-			
-			 if(currentRoom.rID.equals("1.c"))
-			{
-				output= currentRoom.getrItems().iDescription;
-			      }
-			else if(currentRoom.rID.equals("1.d"))
-			{
-				output= currentRoom.getrItems().iDescription;
-			      }
-			else if(currentRoom.rID.equals("1.h"))
-			{
-				output= currentRoom.getrItems().iDescription;
-			      }
-			else if(currentRoom.rID.equals("2.a"))
-			{
-				output= currentRoom.getrItems().iDescription;
-			      }
-			else if(currentRoom.rID.equals("3.d"))
-			{
-				output= currentRoom.getrItems().iDescription;
-			      }
-			else if(currentRoom.rID.equals("2.e"))
-			{
-				output= currentRoom.getrItems().iDescription;
-			      }
-			else if(currentRoom.rID.equals("2.h"))
-			{
-				output= currentRoom.getrItems().iDescription;
-			      }
-			else if(currentRoom.rID.equals("2.j"))
-			{
-				output= currentRoom.getrItems().iDescription;
-			      }
-			else if(currentRoom.rID.equals("2.f"))
-			{
-				output= currentRoom.getrItems().iDescription;
-			      }
-			else if(currentRoom.rID.equals("2.e"))
-			{
-				output= currentRoom.getrItems().iDescription;
-			      }
-			
-			else 
-			{
-				output= "problem!!";
-			}	
-		}
-		if(input.contains("examine p") || input.contains("Examine p"))
-		{
-			
-			 if(currentRoom.rID.equals("1.a"))
-				{
-					output= currentRoom.getrPuzzles().pDescription;
-				      }
-				else if(currentRoom.rID.equals("1.c"))
-				{
-					output= currentRoom.getrPuzzles().pDescription;
-				      }
-				else if(currentRoom.rID.equals("2.a"))
-				{
-					output= currentRoom.getrPuzzles().pDescription;
-				      }
-				else if(currentRoom.rID.equals("4.f"))
-				{
-					output= currentRoom.getrPuzzles().pDescription;
-				      }
-				else if(currentRoom.rID.equals("1.g"))
-				{
-					output= currentRoom.getrPuzzles().pDescription;
-				      }
-				else if(currentRoom.rID.equals("1.a"))
-				{
-					output= currentRoom.getrPuzzles().pDescription;
-				      }
-				else if(currentRoom.rID.equals("1.c"))
-				{
-					output= currentRoom.getrPuzzles().pDescription;
-				      }
-				else if(currentRoom.rID.equals("2.j"))
-				{
-					output= currentRoom.getrPuzzles().pDescription;
-				      }
-				else if(currentRoom.rID.equals("3.a"))
-				{
-					output= currentRoom.getrPuzzles().pDescription;
-				      }
-				else if(currentRoom.rID.equals("3.c"))
-				{
-					output= currentRoom.getrPuzzles().pDescription;
-				      }
-				else if(currentRoom.rID.equals("4.g"))
-				{
-					output= currentRoom.getrPuzzles().pDescription;
-				      }
-				else 
-				{
-					output= "problem!!";
-				}	
-		}
-		if(input.contains("fight") || input.contains("Fight"))
-		{
-			
-			output = "what would you like to do: \n attack \n escape";	
-		}
-		
-		
-		if (input.contains("Attack") || input.contains("attack"))
-				{
-			if(currentRoom.rID.equals("1.f"))
-			{
-				output= "You won, defeated the monster with one attack";
-			      }
-			
-			else if(currentRoom.rID.equals("1.f"))
-			{
-				output= "You won, you defeated him in two attcks";
-			      }
-			else if(currentRoom.rID.equals("2.b"))
-			{
-				output= "You barely won, need to find a medical kit";
-			      }
-			else if(currentRoom.rID.equals("2.j"))
-			{
-				output= "You won, it was a tough fight but you end up winning";
-			      }
-			else if(currentRoom.rID.equals("2.f"))
-			{
-				output= "you need to get an weapon from inventory to help you attack";
-			      }
-			else if(currentRoom.rID.equals("3.d"))
-			{
-				output= "You are losing escape and try again later";
-			      }
-			else if(currentRoom.rID.equals("3.e"))
-			{
-				output= "You won";
-			      }
-			else if(currentRoom.rID.equals("4.b"))
-			{
-				output= "You won";
-			      }
-			else if(currentRoom.rID.equals("4.f"))
-			{
-				output= "Congratulation !!!!!!!!!!You defeated the Captain ";
-			      }
-			else 
-			{
-				output= "your lucky day no fight!!";
-			}
-	}
-		if((input.contains("escape") || input.contains("Escape")) || (input.contains("ignore") || input.contains("Ignore")))
-		{
-			
-			output = "no fight, just move to the next room";	
-		} 
-//			if(currentRoom.getrMonsters().mName.equals("Pirate without weapon"))
-//			{
-//			    output = "You won, defeated the monster with one attack";
-//			}
-//			if(currentRoom.getrMonsters().mName.equalsIgnoreCase("Muscular man"))
-//			{				
-//				output = "You won, you defeated him in two attcks";
-//			
-//				
-//			}
-//			else
-//				output = "	none";
-//				}
-		
-		
-		
-		
 		
 		if(input.contains("pick up") || input.contains("Pick up"))
 		{
@@ -644,16 +274,12 @@ public class TestModel {
 
 	}
 	
-	
-
-	
-
 	//Method finds a room object based on its roomID 
 	public static Room findRoom(String roomID)
 	{
 		for (Room obj: rooms)
 		{
-			if(obj.rID.equals(roomID.trim()))
+			if(obj.rID.equals(roomID))
 			{
 				return obj;
 			}
@@ -667,7 +293,7 @@ public class TestModel {
 	{
 		for (Item obj: items)
 		{
-			if(obj.iId.equalsIgnoreCase(itemID.trim()))
+			if(obj.iId.equalsIgnoreCase(itemID))
 			{
 				return obj;
 			}
@@ -682,7 +308,7 @@ public class TestModel {
 	{
 		for (Item obj: items)
 		{
-			if(obj.iName.equalsIgnoreCase(itemName.trim()))
+			if(obj.iName.equalsIgnoreCase(itemName))
 			{
 				return obj;
 			}			
@@ -691,13 +317,12 @@ public class TestModel {
 		return null;
 
 	}
-
-	//Method finds an item object based ono its item name 
+	
 	public static Monster findMonster(String mId)
 	{
 		for (Monster obj: monsters)
 		{
-			if(obj.mId.equalsIgnoreCase(mId.trim()))
+			if(obj.mId.equalsIgnoreCase(mId))
 			{
 				return obj;
 			}
@@ -705,32 +330,6 @@ public class TestModel {
 		}
 		return null;
 
-	}
-	
-	public static Door findDoor(String dID)
-	{
-		for (Door obj: doors)
-		{
-			if(obj.dID.equalsIgnoreCase(dID))
-			{
-				return obj;
-			}
-
-		}
-		return null;
-
-	}
-	public static Puzzle findPuzzle(String pID)
-	{
-		for (Puzzle obj: puzzles)
-		{
-			if(obj.pID.equalsIgnoreCase(pID))
-			{
-				return obj;
-			}
-
-		}
-		return null;
 	}
 	
 	

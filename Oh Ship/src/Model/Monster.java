@@ -1,4 +1,5 @@
 package Model;
+import java.util.Set;
 
 
 
@@ -11,11 +12,11 @@ public String mDescription = "";
 public String mWeapon = "";
 public String mSurrender = "";
 public boolean isDefeated = false;	
-private CharacterSt stat;
-String ID;
-String name;
-String description;
-String surrender;
+private Character character;
+//String ID;
+//String name;
+//String description;
+//String surrender;
 
 
 public Monster()
@@ -34,26 +35,26 @@ public Monster(String mId, String mName, String mDescription, String mWeapon, St
 }
 	
 
-public Monster(String mId, String mName, String mDescription, String mWeapon, String mSurrender ,CharacterSt stat, boolean isDefeated)
+public Monster(String mId, String mName, String mDescription, String mWeapon, String mSurrender ,Character character, boolean isDefeated)
 {
 	this.mId = mId;
 	this.mName = mName;
 	this.mDescription = mDescription;
 	this.mWeapon = mWeapon;
 	this.mSurrender = mSurrender;
-	this.stat = stat;
+	this.character = character;
 	this.isDefeated = isDefeated;
 	
 }
-public CharacterSt getStat() {
-	return stat;
+public Character getCharacter() {
+	return character;
 }
 
-public void setStat(CharacterSt stat) {
-	this.stat = stat;
+public void setCharacter(Character character) {
+	this.character = character;
 }
 
-public  String getMid() {
+public String getMid() {
 	return mId;
 }
 
@@ -103,13 +104,12 @@ public void setDefeated(boolean isDefeated)
 @Override
 public String toString()
 {
+<<<<<<< HEAD
 	   return "Oh no, there is a " + mName + " in this room." + "\n \n \n what would you like to do: \n examine m \n ignore \n fight";
+=======
+	   return "Monster: Monster ID=" + mId + ", Monster Name=" + mName;
+>>>>>>> parent of 97e2c85... new
 	        
-}
-
-public boolean equalsIgnoreCase(String mid2) {
-	// TODO Auto-generated method stub
-	return false;
 }
 	
 	

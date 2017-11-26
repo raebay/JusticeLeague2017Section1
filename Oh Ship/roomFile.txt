@@ -1,110 +1,122 @@
 1.a
 Engine Room A
 You wake up with a slight headache. You get up. The last thing you can remember is aloud explosion and the engine room shaking. Seems like you're alone. Where did your crewmates go? Even after...whatever happened, the engine is still going, but the emergency lights are flashing. Other than that, nothing seems out of place. You wonder where your mate is and you notice some blood on the floor. 
-D1
+1.b
 None
-None
+<<<<<<< HEAD
 P2
+=======
+Monsters
+>>>>>>> parent of 97e2c85... new
 1.b
 Hall 1 
 You enter this room, but it looks different than you remember. The lights strobing, with wrenches and tools on the ground. Was it the explosion that shook the entire ship? 
-D1, D2
+1.a, 1.c
 None
-None
-Puzzle
+Monsters
 1.c
 Engine Room B
 As you open the door, you see your mate on the floor, possibly unconsious or even dead. The engine controls of this room are turned off. You might have to turn this one on. 
-D3, D2
+1.d, 1.b
 i1
 Monsters
+<<<<<<< HEAD
 P2
+=======
+>>>>>>> parent of 97e2c85... new
 1.d
 Locker Room
 The room is hot as always, but you don't notice because you were sweating when you passed out anyways. All the lockers seem to be shut, as if no one took their belongings before departing. Your locker is also here, and doesn't appear to be tampered with. Is your stuff still in there? 
-D3, D4
+1.c, 1.e
 i2, i3
 Monsters
-Puzzle
 1.e
 Hall 2
 You close the door to the locker room behind you, noticing the closed doors all along the hall. You could try to open them, but you know they won't lead to the deck. The door on one side is the main staircase that will take you to the exit. You hear some noise coming from the Supervisors Office.
-D4, D5, D6
+1.d, 1.f, 1.h
 Items
 Monsters
-Puzzle
 1.f
 Supervisor's Office
 The noise coming from this room was a masked man. He was looking for something on the unconscious body of the supervisor. He notices you, now what? What was this man doing here? The supervisor is still breathing, the man isn't. There's a light coming from the dark utility closet. 
-D5, D7
+1.e, 1.g
 Items
 M1
-Puzzle
 1.g
 Utility Closet 
 The room is dark, but the security monitor is on. Nothing else here but tools and documents on the floor. 
-D7
+1.f
 Items
 Monsters
+<<<<<<< HEAD
 P1
+=======
+>>>>>>> parent of 97e2c85... new
 1.h
 Staircase 1
 The staircase lights are flashing as well, it is almost as if the explosion had affected all of the lights on the boat. You can proceed to go to the next level of the ship if you choose. You must get to the deck and find out what's going on. 
-D8, D6
+2.a, 1.e
 i4
 Monsters
-Puzzle
 2.a
 Access Room to 2nd Floor
 From here you would normally go into the quarters, but the doors are locked. You try the access key and it doesn't work. The power seems to be out from this area on, how do you turn it back on?
-D9, D8
+2.b, 1.h
 Items
 Monsters
+<<<<<<< HEAD
 P7
+=======
+>>>>>>> parent of 97e2c85... new
 2.b
 Open Room Connecting Quarters
 As you open the door, you get knocked off your feet! This time he's carrying a bat. This is the only way to get to ghe deck and come out alive. You must fight him to get to the next room. 
-D10, D9
+2.c, 2.a
 Items
 M2
-Puzzle
 2.c
 Hallway
 This hallway is dark and all of the doors lining each side are locked. There is a light shining from under one of the doors, and at the end of the hallway there is an opening. 
-D10, D12, D11
+2.b, 2.f, 2.d
 Items
 Monsters
-Puzzle
 2.d
 Crews Quarters
 You are in a small room with a bunk bed on each side. There is a medical kit on one of the beds.
+<<<<<<< HEAD
 <<<<<<< HEAD
 2.c
 i6
 =======
 D11
+=======
+2.c
+>>>>>>> parent of 97e2c85... new
 i5
 >>>>>>> 696942a6a658139a26c58e589727f9551d7d1d8b
 Monsters
-Puzzle
 2.e
 Officer's Quarters
 This is a small room with a bunk bed, a closet, and a desk.
+<<<<<<< HEAD
 <<<<<<< HEAD
 2.g
 i8
 =======
 D13
+=======
+2.g
+>>>>>>> parent of 97e2c85... new
 i7
 >>>>>>> 696942a6a658139a26c58e589727f9551d7d1d8b
 Monsters
-Puzzle
 2.g
 Hallway 2
 This hallway is as dark as the last one, but you can make out doors leading to the kitchen and office quarters, and an opening on each end of the hall leading to the cargo area and main lobby. 
-D14, D15, D16, D13
+2.i, 2.j, 2.f, 2.e
 Items
 Monsters
+<<<<<<< HEAD
 Puzzle
 2.f
 Main lobby
@@ -121,14 +133,19 @@ The room is too dark to navigate through, but you can see a bullet proof vest on
 i11
 =======
 D17, D19
+=======
+2.h
+Dining Hall
+The room is too dark to navigate through, but you can see a bullet proof vest on a table.
+2.f, 2.j
+>>>>>>> parent of 97e2c85... new
 i10
 >>>>>>> 696942a6a658139a26c58e589727f9551d7d1d8b
 Monsters
-Puzzle
 2.i
 General Cargo Area
 This is a very large room that is filled almost to capacity with shipping containers. You can hear multiple pirates talking to each other throughout the cargo area.
-D14
+2.g
 Items
 <<<<<<< HEAD
 M3
@@ -224,13 +241,13 @@ Items
 Monsters
 =======
 Monster Fight
-Puzzle
 2.j
 Kitchen
 Regular kitchen. It is not in use and is neat and organized, everything where it should be. There are knives that look like they would make a good weapon...
-D15, D19
+2.g, 2.h
 i8
 M3
+<<<<<<< HEAD
 P3
 2.f
 Main Lobby
@@ -331,3 +348,77 @@ Items
 Monsters
 P8
 >>>>>>> 696942a6a658139a26c58e589727f9551d7d1d8b
+=======
+RoomID
+RoomName
+Description
+Doors
+Items
+Monsters
+RoomID
+RoomName
+Description
+Doors
+Items
+Monsters
+RoomID
+RoomName
+Description
+Doors
+Items
+Monsters
+RoomID
+RoomName
+Description
+Doors
+Items
+Monsters
+RoomID
+RoomName
+Description
+Doors
+Items
+Monsters
+RoomID
+RoomName
+Description
+Doors
+Items
+Monsters
+RoomID
+RoomName
+Description
+Doors
+Items
+Monsters
+RoomID
+RoomName
+Description
+Doors
+Items
+Monsters
+RoomID
+RoomName
+Description
+Doors
+Items
+Monsters
+RoomID
+RoomName
+Description
+Doors
+Items
+Monsters
+RoomID
+RoomName
+Description
+Doors
+Items
+Monsters
+RoomID
+RoomName
+Description
+Doors
+Items
+Monsters
+>>>>>>> parent of 97e2c85... new

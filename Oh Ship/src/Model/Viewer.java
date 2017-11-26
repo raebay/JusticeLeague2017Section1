@@ -1,5 +1,4 @@
 package Model;
-import Controller.Controller;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,7 +37,7 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 	
 	// put any models as field variables, this is the iffy part
 	TestModel test;
-//	Controller test;
+	
 	
 	ImageView imgView;
 	Image imgLowest;
@@ -85,7 +84,6 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 	{
 		// Initialize any models you need to use <<<<
 		test = new TestModel();
-//		test = new Controller();
 		initUI(primaryStage);
 	}
 	
@@ -241,9 +239,9 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 			updateConsole(helpStr);
 		}
 		
-//		 submit button event
-//		 this is the part that communicates with the testmodel class
-//		 >>>>>>>>>>>>
+		// submit button event
+		// this is the part that communicates with the testmodel class
+		// >>>>>>>>>>>>
 		if(event.getSource() == btnSubmit)
 		{
 			String in = input.getText();
@@ -268,9 +266,6 @@ public class Viewer extends Application implements EventHandler<ActionEvent>
 			updateConsole(out);
 			input.setText("");
 		}
-		
-		
-		
 		
 		
 		// combo box event
