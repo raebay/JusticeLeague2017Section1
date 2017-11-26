@@ -103,7 +103,7 @@ public void setDefeated(boolean isDefeated)
 @Override
 public String toString()
 {
-	   return "Oh no, there is a " + mName + " in this room.";
+	   return "Oh no, there is a " + mName + " in this room." + "\n \n \n what would you like to do: \n examine m \n ignore \n fight";
 	        
 }
 

@@ -134,7 +134,7 @@ public class Puzzle //extends Testing
 	   @Override
 	   public String toString()
 	   {
-		   return "Puzzle: " + pName + ", Description=" + pDescription;
+		   return  pName;
 	   }
 	   
 //	   public Puzzle( String rID )

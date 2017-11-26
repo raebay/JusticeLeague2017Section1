@@ -81,7 +81,7 @@ public class Item
 	   @Override
 	   public String toString()
 	   {
-		   return "a wild " + iName + " has appeared!"; 
+		   return "a wild " + iName + " has appeared!" + "\n \n \n what would you like to do with it? \n pick up +(name of item) \n examine i"; 
 	   }
 
 	

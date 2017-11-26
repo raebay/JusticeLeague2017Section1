@@ -339,25 +339,184 @@ public class TestModel {
 		{
 			currentRoom.getrItems();
 			currentRoom.getrMonsters();
+			currentRoom.getrPuzzles();
 			
 			
-			if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() == null) )
+			if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() == null) && (currentRoom.getrPuzzles() == null))
 			{
 				output = "You look around but find nothing you can use.";
 			}
-			else if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() != null) )
+			else if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() != null) && (currentRoom.getrPuzzles() == null))
 			{
-			output = "You look around the room, and " + currentRoom.getrMonsters()+
-			 "\n What would you like to do next: \n fight \n ignore \n examine";
+			output = "You look around the room, and " + currentRoom.getrMonsters();
 			}
-			else if((currentRoom.getrItems() != null) && (currentRoom.getrMonsters() == null) )
+			else if((currentRoom.getrItems() != null) && (currentRoom.getrMonsters() == null) && (currentRoom.getrPuzzles() == null))
 			{
 			output = "You look around the room, and " + currentRoom.getrItems();
 			}
+			else if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() == null) && (currentRoom.getrPuzzles() != null))
+			{
+			output = "You look around the room, and " + currentRoom.getrPuzzles();
+			}
+			else if((currentRoom.getrItems() != null) && (currentRoom.getrMonsters() != null) && (currentRoom.getrPuzzles() == null))
+			{
+			output = "You look around the room, and " + currentRoom.getrItems() + " and, " + currentRoom.getrMonsters();
+			}
+			else if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() != null) && (currentRoom.getrPuzzles() != null))
+			{
+			output = "You look around the room, and " + currentRoom.getrMonsters() + " and, " + currentRoom.getrPuzzles();
+			}
+			else if((currentRoom.getrItems() != null) && (currentRoom.getrMonsters() == null) && (currentRoom.getrPuzzles() != null))
+			{
+			output = "You look around the room, and " + currentRoom.getrItems() + " and, " + currentRoom.getrPuzzles();
+			}
 			else
-				output = "You look around the room, and " + currentRoom.getrItems() + " and, " + currentRoom.getrMonsters();
+				output = "You look around the room, and " + currentRoom.getrItems() + " and, " + currentRoom.getrMonsters() + " and, " + currentRoom.getrPuzzles();
 		}
 		
+		if(input.contains("examine m") || input.contains("Examine m"))
+		{
+			
+			
+			 if(currentRoom.rID.equals("1.f"))
+			{
+				output= currentRoom.getrMonsters().mDescription;
+			      }
+			else if(currentRoom.rID.equals("2.b"))
+			{
+				output= currentRoom.getrMonsters().mDescription;
+			      }
+			else if(currentRoom.rID.equals("2.j"))
+			{
+				output= currentRoom.getrMonsters().mDescription;
+			      }
+			else if(currentRoom.rID.equals("2.f"))
+			{
+				output= currentRoom.getrMonsters().mDescription;
+			      }
+			else if(currentRoom.rID.equals("3.d"))
+			{
+				output= currentRoom.getrMonsters().mDescription;
+			      }
+			else if(currentRoom.rID.equals("3.e"))
+			{
+				output= currentRoom.getrMonsters().mDescription;
+			      }
+			else if(currentRoom.rID.equals("4.b"))
+			{
+				output= currentRoom.getrMonsters().mDescription;
+			      }
+			else if(currentRoom.rID.equals("4.f"))
+			{
+				output= currentRoom.getrMonsters().mDescription;
+			      }
+			else 
+			{
+				output= "problem!!";
+			}	
+		}
+		if(input.contains("examine i") || input.contains("Examine i"))
+		{
+			
+			
+			 if(currentRoom.rID.equals("1.c"))
+			{
+				output= currentRoom.getrItems().iDescription;
+			      }
+			else if(currentRoom.rID.equals("1.d"))
+			{
+				output= currentRoom.getrItems().iDescription;
+			      }
+			else if(currentRoom.rID.equals("1.h"))
+			{
+				output= currentRoom.getrItems().iDescription;
+			      }
+			else if(currentRoom.rID.equals("2.a"))
+			{
+				output= currentRoom.getrItems().iDescription;
+			      }
+			else if(currentRoom.rID.equals("3.d"))
+			{
+				output= currentRoom.getrItems().iDescription;
+			      }
+			else if(currentRoom.rID.equals("2.e"))
+			{
+				output= currentRoom.getrItems().iDescription;
+			      }
+			else if(currentRoom.rID.equals("2.h"))
+			{
+				output= currentRoom.getrItems().iDescription;
+			      }
+			else if(currentRoom.rID.equals("2.j"))
+			{
+				output= currentRoom.getrItems().iDescription;
+			      }
+			else if(currentRoom.rID.equals("2.f"))
+			{
+				output= currentRoom.getrItems().iDescription;
+			      }
+			else if(currentRoom.rID.equals("2.e"))
+			{
+				output= currentRoom.getrItems().iDescription;
+			      }
+			
+			else 
+			{
+				output= "problem!!";
+			}	
+		}
+		if(input.contains("examine p") || input.contains("Examine p"))
+		{
+			
+			 if(currentRoom.rID.equals("1.a"))
+				{
+					output= currentRoom.getrPuzzles().pDescription;
+				      }
+				else if(currentRoom.rID.equals("1.c"))
+				{
+					output= currentRoom.getrPuzzles().pDescription;
+				      }
+				else if(currentRoom.rID.equals("2.a"))
+				{
+					output= currentRoom.getrPuzzles().pDescription;
+				      }
+				else if(currentRoom.rID.equals("4.f"))
+				{
+					output= currentRoom.getrPuzzles().pDescription;
+				      }
+				else if(currentRoom.rID.equals("1.g"))
+				{
+					output= currentRoom.getrPuzzles().pDescription;
+				      }
+				else if(currentRoom.rID.equals("1.a"))
+				{
+					output= currentRoom.getrPuzzles().pDescription;
+				      }
+				else if(currentRoom.rID.equals("1.c"))
+				{
+					output= currentRoom.getrPuzzles().pDescription;
+				      }
+				else if(currentRoom.rID.equals("2.j"))
+				{
+					output= currentRoom.getrPuzzles().pDescription;
+				      }
+				else if(currentRoom.rID.equals("3.a"))
+				{
+					output= currentRoom.getrPuzzles().pDescription;
+				      }
+				else if(currentRoom.rID.equals("3.c"))
+				{
+					output= currentRoom.getrPuzzles().pDescription;
+				      }
+				else if(currentRoom.rID.equals("4.g"))
+				{
+					output= currentRoom.getrPuzzles().pDescription;
+				      }
+				else 
+				{
+					output= "problem!!";
+				}	
+		}
 		if(input.contains("fight") || input.contains("Fight"))
 		{
 			
@@ -372,35 +531,35 @@ public class TestModel {
 				output= "You won, defeated the monster with one attack";
 			      }
 			
-			if(currentRoom.rID.equals("1.f"))
+			else if(currentRoom.rID.equals("1.f"))
 			{
 				output= "You won, you defeated him in two attcks";
 			      }
-			if(currentRoom.rID.equals("2.b"))
+			else if(currentRoom.rID.equals("2.b"))
 			{
 				output= "You barely won, need to find a medical kit";
 			      }
-			if(currentRoom.rID.equals("2.j"))
+			else if(currentRoom.rID.equals("2.j"))
 			{
 				output= "You won, it was a tough fight but you end up winning";
 			      }
-			if(currentRoom.rID.equals("2.f"))
+			else if(currentRoom.rID.equals("2.f"))
 			{
 				output= "you need to get an weapon from inventory to help you attack";
 			      }
-			if(currentRoom.rID.equals("3.d"))
+			else if(currentRoom.rID.equals("3.d"))
 			{
-				output= "You lost try again";
+				output= "You are losing escape and try again later";
 			      }
-			if(currentRoom.rID.equals("3.e"))
-			{
-				output= "You won";
-			      }
-			if(currentRoom.rID.equals("4.b"))
+			else if(currentRoom.rID.equals("3.e"))
 			{
 				output= "You won";
 			      }
-			if(currentRoom.rID.equals("4.f"))
+			else if(currentRoom.rID.equals("4.b"))
+			{
+				output= "You won";
+			      }
+			else if(currentRoom.rID.equals("4.f"))
 			{
 				output= "Congratulation !!!!!!!!!!You defeated the Captain ";
 			      }
@@ -409,7 +568,11 @@ public class TestModel {
 				output= "your lucky day no fight!!";
 			}
 	}
-			 
+		if((input.contains("escape") || input.contains("Escape")) || (input.contains("ignore") || input.contains("Ignore")))
+		{
+			
+			output = "no fight, just move to the next room";	
+		} 
 //			if(currentRoom.getrMonsters().mName.equals("Pirate without weapon"))
 //			{
 //			    output = "You won, defeated the monster with one attack";
