@@ -368,9 +368,7 @@ public class TestModel {
 			{
 				output = "You look around but find nothing you can use.";
 			}
-<<<<<<< HEAD
-			
-=======
+
 			else if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() != null) && (currentRoom.getrPuzzles() == null))
 			{
 			output = "You look around the room, and " + currentRoom.getrMonsters();
@@ -395,7 +393,6 @@ public class TestModel {
 			{
 			output = "You look around the room, and " + currentRoom.getrItems() + " and, " + currentRoom.getrPuzzles();
 			}
->>>>>>> 696942a6a658139a26c58e589727f9551d7d1d8b
 			else
 				output = "You look around the room, and " + currentRoom.getrItems() + " and, " + currentRoom.getrMonsters() + " and, " + currentRoom.getrPuzzles();
 		}
