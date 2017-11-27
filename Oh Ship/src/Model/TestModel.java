@@ -141,7 +141,6 @@ public class TestModel {
 
     	//adding Monster objects
     	Monster rMonsters = TestModel.findMonster(monsters);
-    
     	temps.setrMonsters(rMonsters);
     	
     	//adding whole temps object to rooms arrayList

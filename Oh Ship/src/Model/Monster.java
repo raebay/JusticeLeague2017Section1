@@ -104,11 +104,9 @@ public void setDefeated(boolean isDefeated)
 @Override
 public String toString()
 {
-<<<<<<< HEAD
+
 	   return "Oh no, there is a " + mName + " in this room." + "\n \n \n what would you like to do: \n examine m \n ignore \n fight";
-=======
-	   return "Monster: Monster ID=" + mId + ", Monster Name=" + mName;
->>>>>>> parent of 97e2c85... new
+
 	        
 }
 	
