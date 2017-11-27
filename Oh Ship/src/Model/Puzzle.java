@@ -107,7 +107,7 @@ public class Puzzle extends Testing
 	   @Override
 	   public String toString()
 	   {
-		   return  pName;
+		   return "Puzzle: " + pName + ", Description=" + pDescription;
 	   }
 
 }
