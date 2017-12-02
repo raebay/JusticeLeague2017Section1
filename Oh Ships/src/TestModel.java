@@ -4,8 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Model.Item.ItemType;
-
+import Model.*;
 
 
 public class TestModel {
@@ -140,7 +139,8 @@ public class TestModel {
     	temps.setrItems(rItems);
 
     	//adding Monster objects
-    	Monster rMonsters = TestModel.findMonster(monsters);
+    	Monster rMonsters = new Monster(monsters, monsters, monsters, monsters, null);
+    	rMonsters.setMName(monsters);
     	temps.setrMonsters(rMonsters);
     	
     	//adding whole temps object to rooms arrayList
@@ -232,97 +232,14 @@ public class TestModel {
 		if(input.contains("Search") || input.contains("search"))
 		{
 			currentRoom.getrItems();
-			currentRoom.getrMonsters();
 			
-			
-			if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() == null) )
+			if(currentRoom.getrItems() == null)
 			{
 				output = "You look around but find nothing you can use.";
 			}
 			else
-			output = "You look around the room, and " + currentRoom.getrItems() + ", " + currentRoom.getrMonsters();
-		}
-			else if((currentRoom.getrItems() == null) && (currentRoom.getrMonsters() != null) )
-			{
-			output = "You look around the room, and " + currentRoom.getrMonsters()+
-			 "\n What would you like to do next: \n fight \n ignore \n examine";
-			}
-			else if((currentRoom.getrItems() != null) && (currentRoom.getrMonsters() == null) )
-			{
 			output = "You look around the room, and " + currentRoom.getrItems();
-			}
-			else
-				output = "You look around the room, and " + currentRoom.getrItems() + " and, " + currentRoom.getrMonsters();
 		}
-		
-		if(input.contains("fight") || input.contains("Fight"))
-		{
-			
-			output = "what would you like to do: \n attack \n escape";	
-		}
-		
-		
-		if (input.contains("Attack") || input.contains("attack"))
-				{
-			if(currentRoom.rID.equals("1.f"))
-			{
-				output= "You won, defeated the monster with one attack";
-			      }
-			
-			if(currentRoom.rID.equals("1.f"))
-			{
-				output= "You won, you defeated him in two attcks";
-			      }
-			if(currentRoom.rID.equals("2.b"))
-			{
-				output= "You barely won, need to find a medical kit";
-			      }
-			if(currentRoom.rID.equals("2.j"))
-			{
-				output= "You won, it was a tough fight but you end up winning";
-			      }
-			if(currentRoom.rID.equals("2.f"))
-			{
-				output= "you need to get an weapon from inventory to help you attack";
-			      }
-			if(currentRoom.rID.equals("3.d"))
-			{
-				output= "You lost try again";
-			      }
-			if(currentRoom.rID.equals("3.e"))
-			{
-				output= "You won";
-			      }
-			if(currentRoom.rID.equals("4.b"))
-			{
-				output= "You won";
-			      }
-			if(currentRoom.rID.equals("4.f"))
-			{
-				output= "Congratulation !!!!!!!!!!You defeated the Captain ";
-			      }
-			else 
-			{
-				output= "your lucky day no fight!!";
-			}
-	}
-			 
-//			if(currentRoom.getrMonsters().mName.equals("Pirate without weapon"))
-//			{
-//			    output = "You won, defeated the monster with one attack";
-//			}
-//			if(currentRoom.getrMonsters().mName.equalsIgnoreCase("Muscular man"))
-//			{				
-//				output = "You won, you defeated him in two attcks";
-//			
-//				
-//			}
-//			else
-//				output = "	none";
-//				}
-		
-		
-	
 		
 		if(input.contains("pick up") || input.contains("Pick up"))
 		{
@@ -398,19 +315,7 @@ public class TestModel {
 
 	}
 	
-	public static Monster findMonster(String mId)
-	{
-		for (Monster obj: monsters)
-		{
-			if(obj.mId.equalsIgnoreCase(mId))
-			{
-				return obj;
-			}
-
-		}
-		return null;
-
-	}
+	
 	
 	
 }

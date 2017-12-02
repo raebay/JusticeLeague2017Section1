@@ -1,0 +1,45 @@
+M1
+Pirate without weapon
+This man is masked and seems to be as spooked from your presence as you are from his...
+Gun
+He stuffs you in the closet and locks it. He will get what he needs from the supervisor and leave. You survive without taking any damage.
+M2
+Muscular man
+From the sound you see this muscular man. He will probably put up a better fight than the past one.
+Bat
+Not an available option for this fight
+M3
+Three pirates
+Three pirates searching through the containers.
+Guns
+Surrendering does not work, it will result in getting killed
+M4
+Two pirates with a hostage
+There are two pirates armed with guns, and they are turned the other way, trying to interrogate this hostage.
+Cutlasses
+You make them aware of your presence, and they attack you immediately.
+M5
+Storage room pirate
+When the storage room is opened, a pirate jumps out of nowhere and attacks.
+unarmed
+You are defeated
+M6
+Staircase pirate
+A pirate is running down the stairs towards you.
+unarmed
+You are defeated
+M7
+A one-eyed pirate
+This pirate has a cutlass on his side, and looks like a younger pirate that can't fully grow a beard yet.
+Cutlass
+You announce your presence while slowly approaching, but then suddenly push him off the edge of the ship.
+M8
+First pirate
+This pirate has a cutlass on his side, and look like a younger pirate that can't fully grow a beard yet.
+Cutlass
+You are able to push one over the edge, but then a battle begins with the second
+M9
+Captain
+The captain of the pirates is bloody, has a eye patch, and a long beard. He is the scariest pirate you have ever seen. He has 12 health. Using the gun weapon against him will most likely miss, rather than deal damage.
+Cutlass
+You are defeated
